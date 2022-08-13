@@ -18,6 +18,7 @@
 				document.documentElement.style.border = "0px";
 				document.documentElement.style.padding = "0px";
 				document.documentElement.style.height = "100%";
+				document.documentElement.style.touchAction = "none";
 				document.body.style.boxSizing = "border-box";
 				document.body.style.margin = "0px";
 				document.body.style.border = "0px";
@@ -32,6 +33,7 @@
 				document.body.style.backgroundPosition = "center";
 				document.body.style.fontFamily = "Courier New";
 				document.body.style.overflow = "hidden";
+				document.body.style.touchAction = "none";
 
 				var patternUnit = /^(?:-1|\d|)$/;
 				var units = location.search;
@@ -154,6 +156,7 @@
 						area.style.borderWidth = "1px";
 						area.style.borderStyle = "solid";
 						area.style.borderColor = "transparent";
+						area.style.touchAction = "none";
 						surface.appendChild(area);
 						unit = units[i][j];
 						switch (unit) {
@@ -179,6 +182,7 @@
 				desperatio.src = desperatioImg;
 				desperatio.style.position = "absolute";
 				desperatio.rotate = 0;
+				desperatio.style.touchAction = "none";
 				surface.appendChild(desperatio);
 
 				var timer = document.createElement('span');
@@ -188,6 +192,7 @@
 				timer.style.left = "0%";
 				timer.style.top = 0.5 * (surfaceSide - 100) + "%";
 				timer.style.textAlign = "center";
+				timer.style.touchAction = "none";
 				timer.appendChild(document.createTextNode(""));
 				surface.appendChild(timer);
 

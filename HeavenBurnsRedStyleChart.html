@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Heaven Burns Red Style Chart</title>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+	</head>
+	<body>
+		<script>
+			document.body.style.backgroundColor = 'black';
+			var urls = [
+				'https://hbr.quest/hbr/RKayamoriDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/RKayamoriDefault_R3a_Thumbnail.webp',
+				'https://hbr.quest/hbr/RKayamoriGothic_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/RKayamoriAnniv2023_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/RKayamoriCombat2023_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YIzumiDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YIzumiYukata2022_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YIzumiAnniv2023_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YIzumiBeauty_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YIzumiSnowWhite_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MAikawaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MAikawaPrecious_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MAikawaMaiden_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MAikawaSuite_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/TTojoDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/TTojoSwim2022_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/TTojoSuite_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/TTojoRabbit_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/KarenDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/KarenRedWolf_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/KarenSuite_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/TKunimiDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/TKunimiMagical_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/TKunimiNewYear2023_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/TKunimiSwim2023_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/TKunimiSuite_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/EAoiDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/EAoiWaitress_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/EAoiNewYear2024_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/IMinaseDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/IMinaseNewYear2024_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/SMinaseDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/SMinaseSwim2022_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/SHiguchiDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/SHiguchiGrace_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/KHiiragiDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/KHiiragiBloody_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/KHiiragiWaitress_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/ByakkoDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/ByakkoBeast_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/BIYamawakiDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/BIYamawakiXmas2022_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/BIYamawakiDaydream_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/SSakurabaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/SSakurabaNewYear2023_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/SSakurabaBride_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MTenneDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MTenneAnimal_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MTenneWizard_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YBungoDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YBungoXmas2022_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YBungoDango_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/AKanzakiDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/AKanzakiAgent_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/AKanzakiDirndl_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/AKanzakiSwim2024_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MSatsukiDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MSatsukiAgent_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MSatsukiBride_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MSatsukiSwim2024_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YShirakawaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YShirakawaBloom_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YShirakawaSwim2023_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YShirakawaSocial_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MTsukishiroDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MTsukishiroRugged_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MKiryuDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MKiryuGothic_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MKiryuCerulean_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/CSugaharaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/CSugaharaPurity_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/CSugaharaExcellency_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/HOgasawaraDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/HOgasawaraCutieMaid_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/HOgasawaraNightdress_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/SKuraDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/SKuraLandlady_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MNikaidoDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MNikaidoXmas2023_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/IIshiiDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/FMikotoDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/RMurohushiDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/RMurohushiRace_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/ADateDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/ADateXmas2023_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/AMizuharaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/AMizuharaPirates_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/IcOhshimaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/IcOhshimaBride_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/NiOhshimaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/NiOhshimaYukata2023_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MiOhshimaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YoOhshimaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/YoOhshimaSheep_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/IrOhshimaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/IrOhshimaYukata2023_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MuOhshimaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MuOhshimaFurisode2024_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MYanagiDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MYanagiPunk_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/KMaruyamaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/KMaruyamaPanda_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/SHanamuraDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/CMatsuokaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/INatsumeDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/INatsumeButterfly_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MKurosawaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/CReaperDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/LShanhuaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/LShanhuaNoble_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/LShanhuaSuspicious_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/IRedmayneDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/IRedmaynePhantom_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/VBalakrishnanDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/VBalakrishnanTradition_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MdAngelisDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/MdAngelisKnights_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/CSkopovskayaDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/CSkopovskayaVampire_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/CSkopovskayaBride_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/AliceADefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/AliceAOnePiece_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/AliceBDefault_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/AliceBBlazerUniform_R3_Thumbnail.webp',
+				'https://hbr.quest/hbr/AliceCDefault_R3_Thumbnail.webp'
+				];
+			var columnCount = 14;
+			var gap = 5;
+			var opacityPfp = 0.25;
+			var opacityLb = 0.75;
+			var imageHeight = 150;
+			var imageWidth = 0.86602540378443864676372317075294 * imageHeight;
+			var backgroundSize = 0.975;
+			for (var i = 0; i < urls.length; i ++) {
+				var pfp = document.createElement('div');
+				pfp.style.width = imageWidth - gap + 'px';
+				pfp.style.height = imageHeight - gap + 'px';
+				pfp.style.position = 'absolute';
+				pfp.style.left = (i % columnCount + 0.5 * (Math.floor(i / columnCount) % 2)) * imageWidth + 'px';
+				pfp.style.top = 0.75 * Math.floor(i / columnCount) * imageHeight + 'px';
+				pfp.style.backgroundImage = 'url("' + urls[i] + '")';
+				pfp.style.backgroundPosition = 'center';
+				pfp.style.backgroundSize = backgroundSize * 115.47005383792515290182975610039 + '%';
+				pfp.style.backgroundRepeat = 'no-repeat';
+				pfp.style.clipPath = 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)';
+				pfp.style.opacity = '' + opacityPfp;
+				pfp.style.touchAction = "none";
+				pfp.limitBreak = -1;
+				pfp.addEventListener("pointerdown", function(e) {
+					e.preventDefault();
+					if (4 === e.target.limitBreak) {
+						e.target.limitBreak = -1;
+						e.target.style.opacity = '' + opacityPfp;
+						e.target.lb.style.display = 'none';
+					} else {
+						e.target.limitBreak += 1;
+						e.target.lb.textContent = '' + e.target.limitBreak;
+						e.target.style.opacity = '1';
+						e.target.lb.style.display = 'flex';
+					}
+				});
+				document.body.appendChild(pfp);
+				var lb = document.createElement('div');
+				lb.style.width = 0.2 * imageWidth + 'px';
+				lb.style.height = 0.2 * imageHeight + 'px';
+				lb.style.position = 'absolute';
+				lb.style.left = (i % columnCount + 0.5 * (Math.floor(i / columnCount) % 2)) * imageWidth + 3 + 'px';
+				lb.style.top = (0.75 * Math.floor(i / columnCount) + 0.2) * imageHeight + 'px';
+				lb.style.backgroundColor = 'rgba(255, 255, 255, ' + opacityLb + ')';
+				lb.style.clipPath = 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)';
+				lb.style.display = 'none';
+				lb.style.justifyContent = 'center';
+				lb.style.alignItems = 'center';
+				lb.style.fontSize = 0.15 * imageHeight + 'px';
+				lb.style.fontWeight = 'bold';
+				lb.style.fontFamily = 'sans-serif';
+				lb.style.touchAction = "none";
+				document.body.appendChild(lb);
+				pfp.lb = lb;
+			}
+		</script>
+	</body>
+</html>

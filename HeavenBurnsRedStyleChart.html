@@ -246,7 +246,9 @@
 					backgroundImage: 'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAAC4AQMAAABq/bSEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAP///6XZn90AAAAJcEhZcwAADsIAAA7CARUoSoAAAAF1SURBVFjD7dYxUsUgEAbgn6FImSPkKPEoHsHSwpF4s1h5DOlssYszmSDZTYC3kNHRFvKq7zHwL0P2Pfj6aN68+d/848JfLny6cJjmzZs3L/3r8Hfh1rB30kfyTQufB/JVSe/Jl8I7cle4JrdyfavIZ+kO5JPMuQTcP73wFWPwDYPwXWD2b299XwFmiUcXPewI49I0nwqAsarwQDAxPvsbFwBD8T+jay4gPHv82ZyuuAA8U/zom+IC8ETxp/F0cAF4pPjJFReAB5ogfNa4VxW3Cne64g5AV/EleF/xNfhQ8S34WHEf3NR8Ah+u9Bmq6ha66o7jF74cl0f6elwe6dtxeaSf713hx+914a8X7n/r+J+bH1z8eUFy8w/f0tLTeOFD5uuFc6shn/u62y5zp5PrzG1ylx80txr2m47aR18wZDGTr0gbWJ5Dvl/9NMbo/sZN8il3n9xmrDN3mXeZr5kPmXu57elWLJP688Gyn8vRvHlzObz/BhLP4gc16GgKAAAAAElFTkSuQmCC")',
 					onPointerdown: function(e) {
 						e.preventDefault();
-						html2canvas(ws).then(function(c) {
+						html2canvas(ws, {
+							backgroundColor: null
+						}).then(function(c) {
 							var a = document.createElement('a');
 							a.download = 'heaven_burns_red_style_chart.png';
 							a.href = c.toDataURL('image/png');

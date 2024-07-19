@@ -3,191 +3,305 @@
 	<head>
 		<title>Heaven Burns Red Style Chart</title>
 		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+		<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 	</head>
 	<body>
 		<script>
-			document.body.style.backgroundColor = 'black';
+			Object.assign(document.body.style, {
+				backgroundColor: 'black',
+				margin: 0
+			});
 			var urls = [
-				'https://hbr.quest/hbr/RKayamoriDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/RKayamoriDefault_R3a_Thumbnail.webp',
-				'https://hbr.quest/hbr/RKayamoriGothic_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/RKayamoriAnniv2023_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/RKayamoriCombat2023_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YIzumiDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YIzumiYukata2022_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YIzumiAnniv2023_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YIzumiBeauty_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YIzumiSnowWhite_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MAikawaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MAikawaPrecious_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MAikawaMaiden_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MAikawaSuite_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/TTojoDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/TTojoSwim2022_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/TTojoSuite_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/TTojoRabbit_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/KarenDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/KarenRedWolf_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/KarenSuite_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/TKunimiDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/TKunimiMagical_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/TKunimiNewYear2023_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/TKunimiSwim2023_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/TKunimiSuite_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/EAoiDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/EAoiWaitress_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/EAoiNewYear2024_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/IMinaseDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/IMinaseNewYear2024_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/SMinaseDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/SMinaseSwim2022_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/SHiguchiDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/SHiguchiGrace_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/KHiiragiDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/KHiiragiBloody_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/KHiiragiWaitress_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/ByakkoDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/ByakkoBeast_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/BIYamawakiDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/BIYamawakiXmas2022_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/BIYamawakiDaydream_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/SSakurabaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/SSakurabaNewYear2023_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/SSakurabaBride_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MTenneDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MTenneAnimal_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MTenneWizard_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YBungoDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YBungoXmas2022_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YBungoDango_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/AKanzakiDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/AKanzakiAgent_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/AKanzakiDirndl_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/AKanzakiSwim2024_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MSatsukiDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MSatsukiAgent_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MSatsukiBride_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MSatsukiSwim2024_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YShirakawaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YShirakawaBloom_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YShirakawaSwim2023_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YShirakawaSocial_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MTsukishiroDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MTsukishiroRugged_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MKiryuDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MKiryuGothic_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MKiryuCerulean_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/CSugaharaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/CSugaharaPurity_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/CSugaharaExcellency_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/HOgasawaraDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/HOgasawaraCutieMaid_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/HOgasawaraNightdress_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/SKuraDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/SKuraLandlady_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MNikaidoDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MNikaidoXmas2023_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/IIshiiDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/FMikotoDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/RMurohushiDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/RMurohushiRace_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/ADateDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/ADateXmas2023_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/AMizuharaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/AMizuharaPirates_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/IcOhshimaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/IcOhshimaBride_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/NiOhshimaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/NiOhshimaYukata2023_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MiOhshimaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YoOhshimaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/YoOhshimaSheep_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/IrOhshimaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/IrOhshimaYukata2023_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MuOhshimaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MuOhshimaFurisode2024_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MYanagiDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MYanagiPunk_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/KMaruyamaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/KMaruyamaPanda_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/SHanamuraDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/CMatsuokaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/INatsumeDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/INatsumeButterfly_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MKurosawaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/CReaperDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/LShanhuaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/LShanhuaNoble_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/LShanhuaSuspicious_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/IRedmayneDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/IRedmaynePhantom_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/VBalakrishnanDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/VBalakrishnanTradition_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MdAngelisDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/MdAngelisKnights_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/CSkopovskayaDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/CSkopovskayaVampire_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/CSkopovskayaBride_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/AliceADefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/AliceAOnePiece_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/AliceBDefault_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/AliceBBlazerUniform_R3_Thumbnail.webp',
-				'https://hbr.quest/hbr/AliceCDefault_R3_Thumbnail.webp'
+				'hbr/RKayamoriDefault_R3_Thumbnail.webp',
+				'hbr/RKayamoriDefault_R3a_Thumbnail.webp',
+				'hbr/RKayamoriGothic_R3_Thumbnail.webp',
+				'hbr/RKayamoriAnniv2023_R3_Thumbnail.webp',
+				'hbr/RKayamoriCombat2023_R3_Thumbnail.webp',
+				'hbr/YIzumiDefault_R3_Thumbnail.webp',
+				'hbr/YIzumiYukata2022_R3_Thumbnail.webp',
+				'hbr/YIzumiAnniv2023_R3_Thumbnail.webp',
+				'hbr/YIzumiBeauty_R3_Thumbnail.webp',
+				'hbr/YIzumiSnowWhite_R3_Thumbnail.webp',
+				'hbr/MAikawaDefault_R3_Thumbnail.webp',
+				'hbr/MAikawaPrecious_R3_Thumbnail.webp',
+				'hbr/MAikawaMaiden_R3_Thumbnail.webp',
+				'hbr/MAikawaSuite_R3_Thumbnail.webp',
+				'hbr/TTojoDefault_R3_Thumbnail.webp',
+				'hbr/TTojoSwim2022_R3_Thumbnail.webp',
+				'hbr/TTojoSuite_R3_Thumbnail.webp',
+				'hbr/TTojoRabbit_R3_Thumbnail.webp',
+				'hbr/KarenDefault_R3_Thumbnail.webp',
+				'hbr/KarenRedWolf_R3_Thumbnail.webp',
+				'hbr/KarenSuite_R3_Thumbnail.webp',
+				'hbr/TKunimiDefault_R3_Thumbnail.webp',
+				'hbr/TKunimiMagical_R3_Thumbnail.webp',
+				'hbr/TKunimiNewYear2023_R3_Thumbnail.webp',
+				'hbr/TKunimiSwim2023_R3_Thumbnail.webp',
+				'hbr/TKunimiSuite_R3_Thumbnail.webp',
+				'hbr/EAoiDefault_R3_Thumbnail.webp',
+				'hbr/EAoiWaitress_R3_Thumbnail.webp',
+				'hbr/EAoiNewYear2024_R3_Thumbnail.webp',
+				'hbr/IMinaseDefault_R3_Thumbnail.webp',
+				'hbr/IMinaseNewYear2024_R3_Thumbnail.webp',
+				'hbr/SMinaseDefault_R3_Thumbnail.webp',
+				'hbr/SMinaseSwim2022_R3_Thumbnail.webp',
+				'hbr/SHiguchiDefault_R3_Thumbnail.webp',
+				'hbr/SHiguchiGrace_R3_Thumbnail.webp',
+				'hbr/KHiiragiDefault_R3_Thumbnail.webp',
+				'hbr/KHiiragiBloody_R3_Thumbnail.webp',
+				'hbr/KHiiragiWaitress_R3_Thumbnail.webp',
+				'hbr/ByakkoDefault_R3_Thumbnail.webp',
+				'hbr/ByakkoBeast_R3_Thumbnail.webp',
+				'hbr/BIYamawakiDefault_R3_Thumbnail.webp',
+				'hbr/BIYamawakiXmas2022_R3_Thumbnail.webp',
+				'hbr/BIYamawakiDaydream_R3_Thumbnail.webp',
+				'hbr/SSakurabaDefault_R3_Thumbnail.webp',
+				'hbr/SSakurabaNewYear2023_R3_Thumbnail.webp',
+				'hbr/SSakurabaBride_R3_Thumbnail.webp',
+				'hbr/MTenneDefault_R3_Thumbnail.webp',
+				'hbr/MTenneAnimal_R3_Thumbnail.webp',
+				'hbr/MTenneWizard_R3_Thumbnail.webp',
+				'hbr/YBungoDefault_R3_Thumbnail.webp',
+				'hbr/YBungoXmas2022_R3_Thumbnail.webp',
+				'hbr/YBungoDango_R3_Thumbnail.webp',
+				'hbr/AKanzakiDefault_R3_Thumbnail.webp',
+				'hbr/AKanzakiAgent_R3_Thumbnail.webp',
+				'hbr/AKanzakiDirndl_R3_Thumbnail.webp',
+				'hbr/AKanzakiSwim2024_R3_Thumbnail.webp',
+				'hbr/MSatsukiDefault_R3_Thumbnail.webp',
+				'hbr/MSatsukiAgent_R3_Thumbnail.webp',
+				'hbr/MSatsukiBride_R3_Thumbnail.webp',
+				'hbr/MSatsukiSwim2024_R3_Thumbnail.webp',
+				'hbr/YShirakawaDefault_R3_Thumbnail.webp',
+				'hbr/YShirakawaBloom_R3_Thumbnail.webp',
+				'hbr/YShirakawaSwim2023_R3_Thumbnail.webp',
+				'hbr/YShirakawaSocial_R3_Thumbnail.webp',
+				'hbr/MTsukishiroDefault_R3_Thumbnail.webp',
+				'hbr/MTsukishiroRugged_R3_Thumbnail.webp',
+				'hbr/MKiryuDefault_R3_Thumbnail.webp',
+				'hbr/MKiryuGothic_R3_Thumbnail.webp',
+				'hbr/MKiryuCerulean_R3_Thumbnail.webp',
+				'hbr/CSugaharaDefault_R3_Thumbnail.webp',
+				'hbr/CSugaharaPurity_R3_Thumbnail.webp',
+				'hbr/CSugaharaExcellency_R3_Thumbnail.webp',
+				'hbr/HOgasawaraDefault_R3_Thumbnail.webp',
+				'hbr/HOgasawaraCutieMaid_R3_Thumbnail.webp',
+				'hbr/HOgasawaraNightdress_R3_Thumbnail.webp',
+				'hbr/SKuraDefault_R3_Thumbnail.webp',
+				'hbr/SKuraLandlady_R3_Thumbnail.webp',
+				'hbr/MNikaidoDefault_R3_Thumbnail.webp',
+				'hbr/MNikaidoXmas2023_R3_Thumbnail.webp',
+				'hbr/IIshiiDefault_R3_Thumbnail.webp',
+				'hbr/FMikotoDefault_R3_Thumbnail.webp',
+				'hbr/RMurohushiDefault_R3_Thumbnail.webp',
+				'hbr/RMurohushiRace_R3_Thumbnail.webp',
+				'hbr/ADateDefault_R3_Thumbnail.webp',
+				'hbr/ADateXmas2023_R3_Thumbnail.webp',
+				'hbr/AMizuharaDefault_R3_Thumbnail.webp',
+				'hbr/AMizuharaPirates_R3_Thumbnail.webp',
+				'hbr/IcOhshimaDefault_R3_Thumbnail.webp',
+				'hbr/IcOhshimaBride_R3_Thumbnail.webp',
+				'hbr/NiOhshimaDefault_R3_Thumbnail.webp',
+				'hbr/NiOhshimaYukata2023_R3_Thumbnail.webp',
+				'hbr/MiOhshimaDefault_R3_Thumbnail.webp',
+				'hbr/YoOhshimaDefault_R3_Thumbnail.webp',
+				'hbr/YoOhshimaSheep_R3_Thumbnail.webp',
+				'hbr/IrOhshimaDefault_R3_Thumbnail.webp',
+				'hbr/IrOhshimaYukata2023_R3_Thumbnail.webp',
+				'hbr/MuOhshimaDefault_R3_Thumbnail.webp',
+				'hbr/MuOhshimaFurisode2024_R3_Thumbnail.webp',
+				'hbr/MYanagiDefault_R3_Thumbnail.webp',
+				'hbr/MYanagiPunk_R3_Thumbnail.webp',
+				'hbr/KMaruyamaDefault_R3_Thumbnail.webp',
+				'hbr/KMaruyamaPanda_R3_Thumbnail.webp',
+				'hbr/SHanamuraDefault_R3_Thumbnail.webp',
+				'hbr/CMatsuokaDefault_R3_Thumbnail.webp',
+				'hbr/INatsumeDefault_R3_Thumbnail.webp',
+				'hbr/INatsumeButterfly_R3_Thumbnail.webp',
+				'hbr/MKurosawaDefault_R3_Thumbnail.webp',
+				'hbr/CReaperDefault_R3_Thumbnail.webp',
+				'hbr/LShanhuaDefault_R3_Thumbnail.webp',
+				'hbr/LShanhuaNoble_R3_Thumbnail.webp',
+				'hbr/LShanhuaSuspicious_R3_Thumbnail.webp',
+				'hbr/IRedmayneDefault_R3_Thumbnail.webp',
+				'hbr/IRedmaynePhantom_R3_Thumbnail.webp',
+				'hbr/VBalakrishnanDefault_R3_Thumbnail.webp',
+				'hbr/VBalakrishnanTradition_R3_Thumbnail.webp',
+				'hbr/MdAngelisDefault_R3_Thumbnail.webp',
+				'hbr/MdAngelisKnights_R3_Thumbnail.webp',
+				'hbr/CSkopovskayaDefault_R3_Thumbnail.webp',
+				'hbr/CSkopovskayaVampire_R3_Thumbnail.webp',
+				'hbr/CSkopovskayaBride_R3_Thumbnail.webp',
+				'hbr/AliceADefault_R3_Thumbnail.webp',
+				'hbr/AliceAOnePiece_R3_Thumbnail.webp',
+				'hbr/AliceBDefault_R3_Thumbnail.webp',
+				'hbr/AliceBBlazerUniform_R3_Thumbnail.webp',
+				'hbr/AliceCDefault_R3_Thumbnail.webp'
 				];
 			var columnCount = 14;
 			var gap = 5;
-			var opacityPfp = 0.25;
-			var opacityLb = 0.75;
+			var opacityPfp = 0.5;
+			var opacityLb = 0.8;
 			var imageHeight = 150;
 			var imageWidth = 0.86602540378443864676372317075294 * imageHeight;
 			var backgroundSize = 0.975;
+			var lbLeftOffset = 3;
+			var ws = document.createElement('div');
+			Object.assign(ws.style, {
+				width: (columnCount + 0.5) * imageWidth - gap + 'px',
+				height: (1 + 0.75 * Math.floor(urls.length / columnCount)) * imageHeight - gap + 'px'
+			});
+			var hbrStyle = [];
+			var onPointerdownPfp = function(pfp) {
+				if (4 === pfp.limitBreak) {
+					pfp.limitBreak = -1;
+					pfp.style.opacity = '' + opacityPfp;
+					pfp.lb.style.display = 'none';
+				} else {
+					pfp.limitBreak += 1;
+					pfp.lb.textContent = '' + pfp.limitBreak;
+					pfp.style.opacity = '1';
+					pfp.lb.style.display = 'flex';
+				}
+			};
 			for (var i = 0; i < urls.length; i ++) {
 				var pfp = document.createElement('div');
-				pfp.style.width = imageWidth - gap + 'px';
-				pfp.style.height = imageHeight - gap + 'px';
-				pfp.style.position = 'absolute';
-				pfp.style.left = (i % columnCount + 0.5 * (Math.floor(i / columnCount) % 2)) * imageWidth + 'px';
-				pfp.style.top = 0.75 * Math.floor(i / columnCount) * imageHeight + 'px';
-				pfp.style.backgroundImage = 'url("' + urls[i] + '")';
-				pfp.style.backgroundPosition = 'center';
-				pfp.style.backgroundSize = backgroundSize * 115.47005383792515290182975610039 + '%';
-				pfp.style.backgroundRepeat = 'no-repeat';
-				pfp.style.clipPath = 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)';
-				pfp.style.opacity = '' + opacityPfp;
-				pfp.style.touchAction = "none";
+				hbrStyle.push(pfp);
+				Object.assign(pfp.style, {
+					width: imageWidth - gap + 'px',
+					height: imageHeight - gap + 'px',
+					position: 'absolute',
+					left: (i % columnCount + 0.5 * (Math.floor(i / columnCount) % 2)) * imageWidth + 'px',
+					top: 0.75 * Math.floor(i / columnCount) * imageHeight + 'px',
+					backgroundImage: 'url("' + urls[i] + '")',
+					backgroundPosition: 'center',
+					backgroundSize: backgroundSize * 115.47005383792515290182975610039 + '%',
+					backgroundRepeat: 'no-repeat',
+					clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)',
+					opacity: '' + opacityPfp
+				});
 				pfp.limitBreak = -1;
 				pfp.addEventListener("pointerdown", function(e) {
 					e.preventDefault();
-					if (4 === e.target.limitBreak) {
-						e.target.limitBreak = -1;
-						e.target.style.opacity = '' + opacityPfp;
-						e.target.lb.style.display = 'none';
-					} else {
-						e.target.limitBreak += 1;
-						e.target.lb.textContent = '' + e.target.limitBreak;
-						e.target.style.opacity = '1';
-						e.target.lb.style.display = 'flex';
-					}
+					onPointerdownPfp(e.target);
 				});
-				document.body.appendChild(pfp);
+				ws.appendChild(pfp);
 				var lb = document.createElement('div');
-				lb.style.width = 0.2 * imageWidth + 'px';
-				lb.style.height = 0.2 * imageHeight + 'px';
-				lb.style.position = 'absolute';
-				lb.style.left = (i % columnCount + 0.5 * (Math.floor(i / columnCount) % 2)) * imageWidth + 3 + 'px';
-				lb.style.top = (0.75 * Math.floor(i / columnCount) + 0.2) * imageHeight + 'px';
-				lb.style.backgroundColor = 'rgba(255, 255, 255, ' + opacityLb + ')';
-				lb.style.clipPath = 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)';
-				lb.style.display = 'none';
-				lb.style.justifyContent = 'center';
-				lb.style.alignItems = 'center';
-				lb.style.fontSize = 0.15 * imageHeight + 'px';
-				lb.style.fontWeight = 'bold';
-				lb.style.fontFamily = 'sans-serif';
-				lb.style.touchAction = "none";
-				document.body.appendChild(lb);
+				Object.assign(lb.style, {
+					width: 0.2 * imageWidth + 'px',
+					height: 0.2 * imageHeight + 'px',
+					position: 'absolute',
+					left: (i % columnCount + 0.5 * (Math.floor(i / columnCount) % 2)) * imageWidth + lbLeftOffset + 'px',
+					top: (0.75 * Math.floor(i / columnCount) + 0.2) * imageHeight + 'px',
+					backgroundColor: 'rgba(255, 255, 255, ' + opacityLb + ')',
+					clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)',
+					display: 'none',
+					justifyContent: 'center',
+					alignItems: 'center',
+					fontSize: 0.15 * imageHeight + 'px',
+					fontWeight: 'bold',
+					fontFamily: 'sans-serif'
+				});
+				ws.appendChild(lb);
 				pfp.lb = lb;
 			}
+			document.body.appendChild(ws);
+			var fa = document.createElement('div');
+			Object.assign(fa.style, {
+				width: 1.5 * imageWidth + 'px',
+				position: 'fixed',
+				right: 0,
+				top: columnCount % 2 * 0.75 * imageHeight + 'px'
+			});
+			var fnProperties = [
+				{
+					textContent: '＞',
+					onPointerdown: function(e) {
+						e.preventDefault();
+						fa.style.display = 'none';
+					}
+				},
+				{
+					textContent: 'ALL',
+					lb: '4',
+					onPointerdown: function(e) {
+						e.preventDefault();
+						for (var i in hbrStyle) {
+							var pfp = hbrStyle[i];
+							pfp.limitBreak = 3;
+							onPointerdownPfp(pfp);
+						}
+					}
+				},
+				{
+					textContent: 'ALL',
+					lb: '+1',
+					onPointerdown: function(e) {
+						e.preventDefault();
+						for (var i in hbrStyle)
+							onPointerdownPfp(hbrStyle[i]);
+					}
+				},
+				{
+					backgroundImage: 'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAAC4AQMAAABq/bSEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAP///6XZn90AAAAJcEhZcwAADsIAAA7CARUoSoAAAAF1SURBVFjD7dYxUsUgEAbgn6FImSPkKPEoHsHSwpF4s1h5DOlssYszmSDZTYC3kNHRFvKq7zHwL0P2Pfj6aN68+d/848JfLny6cJjmzZs3L/3r8Hfh1rB30kfyTQufB/JVSe/Jl8I7cle4JrdyfavIZ+kO5JPMuQTcP73wFWPwDYPwXWD2b299XwFmiUcXPewI49I0nwqAsarwQDAxPvsbFwBD8T+jay4gPHv82ZyuuAA8U/zom+IC8ETxp/F0cAF4pPjJFReAB5ogfNa4VxW3Cne64g5AV/EleF/xNfhQ8S34WHEf3NR8Ah+u9Bmq6ha66o7jF74cl0f6elwe6dtxeaSf713hx+914a8X7n/r+J+bH1z8eUFy8w/f0tLTeOFD5uuFc6shn/u62y5zp5PrzG1ylx80txr2m47aR18wZDGTr0gbWJ5Dvl/9NMbo/sZN8il3n9xmrDN3mXeZr5kPmXu57elWLJP688Gyn8vRvHlzObz/BhLP4gc16GgKAAAAAElFTkSuQmCC")',
+					onPointerdown: function(e) {
+						e.preventDefault();
+						html2canvas(ws).then(function(c) {
+							var a = document.createElement('a');
+							a.download = 'heaven_burns_red_style_chart.png';
+							a.href = c.toDataURL('image/png');
+							a.click();
+						});
+					}
+				}
+				];
+			for (var i in fnProperties) {
+				var fn = document.createElement('div');
+				var properties = fnProperties[i];
+				Object.assign(fn.style, {
+					width: imageWidth - gap + 'px',
+					height: imageHeight - gap + 'px',
+					position: 'absolute',
+					left: (0.5 * (i % 2)) * imageWidth + 'px',
+					top: 0.75 * i * imageHeight + 'px',
+					backgroundColor: '#DFDFDF',
+					backgroundPosition: 'center',
+					backgroundSize: backgroundSize * 115.47005383792515290182975610039 + '%',
+					backgroundRepeat: 'no-repeat',
+					clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)',
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					fontSize: 0.33 * imageHeight + 'px',
+					fontWeight: 'sans-serif'
+				});
+				if (undefined !== properties.backgroundImage)
+					fn.style.backgroundImage = properties.backgroundImage;
+				Object.assign(fn, properties);
+				fn.addEventListener("pointerdown", properties.onPointerdown);
+				fa.appendChild(fn);
+				if (undefined !== properties.lb) {
+					var lb = document.createElement('div');
+					Object.assign(lb.style, {
+						width: 0.2 * imageWidth + 'px',
+						height: 0.2 * imageHeight + 'px',
+						position: 'absolute',
+						left: (0.5 * (i % 2)) * imageWidth + lbLeftOffset + 'px',
+						top: (0.75 * i + 0.2) * imageHeight + 'px',
+						backgroundColor: 'white',
+						clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)',
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						fontSize: 0.15 * imageHeight + 'px',
+						fontWeight: 'bold',
+						fontFamily: 'sans-serif'
+					});
+					lb.textContent = properties.lb;
+					fa.appendChild(lb);
+				}
+			}
+			document.body.appendChild(fa);
 		</script>
 	</body>
 </html>

@@ -3,6 +3,7 @@
 	<head>
 		<title>Heaven Burns Red Style Chart</title>
 		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+		<meta name="viewport" content="initial-scale=2"/>
 		<script src="dom-to-image.min.js"></script>
 	</head>
 	<body>
@@ -274,12 +275,15 @@
 			var backgroundSize = 0.975;
 			var lbLeftOffset = 3;
 			var onPointerdown = function(e) {
+				e.preventDefault();
 				e.target.pointerdown = true;
 			};
 			var onPointermove = function(e) {
+				e.preventDefault();
 				e.target.pointerdown = false;
 			};
 			var onPointercancel = function(e) {
+				e.preventDefault();
 				e.target.pointerdown = false;
 			};
 			var ws = document.createElement('div');

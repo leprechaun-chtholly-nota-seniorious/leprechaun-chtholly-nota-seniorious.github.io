@@ -276,7 +276,8 @@
 			var lbLeftOffset = 3;
 			var onPointerdown = function(e) {
 				e.preventDefault();
-				e.target.pointerdown = true;
+				if ('mouse' !== e.pointerType || 0 === e.button)
+					e.target.pointerdown = true;
 			};
 			var onPointermove = function(e) {
 				e.preventDefault();

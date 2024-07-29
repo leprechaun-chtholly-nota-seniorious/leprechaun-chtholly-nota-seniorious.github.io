@@ -296,7 +296,28 @@
 				width: (columnCount + 0.5) * imageWidth - gap + 'px',
 				height: (1 + 0.75 * Math.floor(styles.length / columnCount)) * imageHeight - gap + 'px'
 			});
-			var sum = document.createElement('div');
+			var styleSum = [];
+			for (var i = 0; i < 2; i ++) {
+				var sum = document.createElement('div');
+				Object.assign(sum.style, {
+					width: imageWidth - gap + 'px',
+					height: imageHeight - gap + 'px',
+					position: 'absolute',
+					left: (styles.length % columnCount + 0.5 * (Math.floor(styles.length / columnCount) % 2)) * imageWidth + 'px',
+					top: 0.75 * Math.floor(styles.length / columnCount) * imageHeight + 'px',
+					backgroundColor: 0 === i ? 'white' : 'transparent',
+					clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)',
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					fontSize: 0.2 * imageHeight + 'px',
+					fontWeight: 'bold',
+					fontFamily: 'sans-serif',
+					whiteSpace: 'pre'
+				});
+				ws.appendChild(sum);
+				styleSum.push(sum);
+			}
 			var hbrStyle = [];
 			var getStyleCount = function() {
 				var count = 0;
@@ -310,14 +331,15 @@
 					pfp.limitBreak = -1;
 					pfp.style.opacity = '' + opacityPfp;
 					pfp.lb.style.display = 'none';
-					sum.textContent = getStyleCount() + '/' + styles.length;
 				} else {
 					pfp.limitBreak += 1;
 					pfp.lb.textContent = '' + pfp.limitBreak;
 					pfp.style.opacity = '1';
 					pfp.lb.style.display = 'flex';
-					sum.textContent = getStyleCount() + '/' + styles.length;
 				}
+				var styleCount = getStyleCount();
+				styleSum[0].textContent = styleCount + '/' + styles.length + '\n　';
+				styleSum[1].textContent = '\n' + ((100 * styleCount / styles.length).toFixed(1)) + '%';
 				localStorage.setItem(pfp.id, pfp.limitBreak);
 			};
 			var onPointerupPfp = function(e) {
@@ -372,22 +394,6 @@
 				pfp.lb = lb;
 				updateLB(pfp);
 			}
-			Object.assign(sum.style, {
-				width: imageWidth - gap + 'px',
-				height: imageHeight - gap + 'px',
-				position: 'absolute',
-				left: (styles.length % columnCount + 0.5 * (Math.floor(styles.length / columnCount) % 2)) * imageWidth + 'px',
-				top: 0.75 * Math.floor(styles.length / columnCount) * imageHeight + 'px',
-				backgroundColor: 'white',
-				clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)',
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'center',
-				fontSize: 0.2 * imageHeight + 'px',
-				fontWeight: 'bold',
-				fontFamily: 'sans-serif'
-			});
-			ws.appendChild(sum);
 			document.body.appendChild(ws);
 			var io = document.createElement('div');
 			Object.assign(io.style, {

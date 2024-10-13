@@ -349,10 +349,11 @@
 					return count;
 				};
 				var updateLB = function(pfp, refreshOnly = false) {
-					if (search && !refreshOnly && confirm('Overwrite local storage?'))
+					if (search && !refreshOnly) {
+						if (!confirm('Overwrite local storage?'))
+							return;
 						search = false;
-					else
-						return;
+					}
 					if ((refreshOnly ? -1 : 4) === pfp.limitBreak) {
 						pfp.limitBreak = -1;
 						pfp.style.opacity = '' + opacityPfp;

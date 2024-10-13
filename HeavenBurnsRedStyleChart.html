@@ -351,7 +351,7 @@
 				var updateLB = function(pfp, refreshOnly = false) {
 					if (search && !refreshOnly) {
 						if (!confirm('Overwrite local storage?'))
-							return;
+							return false;
 						search = false;
 						for (var i in hbrStyle) {
 							var p = hbrStyle[i];
@@ -374,6 +374,7 @@
 					styleSum[1].textContent = '\n' + ((100 * styleCount / styles.length).toFixed(1)) + '%';
 					if (!refreshOnly)
 						localStorage.setItem(pfp.id, pfp.limitBreak);
+					return true;
 				};
 				var onPointerupPfp = function(e) {
 					e.preventDefault();
@@ -512,7 +513,8 @@
 							for (var i in hbrStyle) {
 								var pfp = hbrStyle[i];
 								pfp.limitBreak = 3;
-								updateLB(pfp);
+								if (!updateLB(pfp))
+									break;
 							}
 						}
 					},
@@ -522,7 +524,8 @@
 						onPointerup: function(e) {
 							e.preventDefault();
 							for (var i in hbrStyle)
-								updateLB(hbrStyle[i]);
+								if (!updateLB(hbrStyle[i]))
+									break;
 						}
 					},
 					{

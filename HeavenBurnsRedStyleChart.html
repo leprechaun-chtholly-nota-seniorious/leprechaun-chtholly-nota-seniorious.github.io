@@ -353,6 +353,10 @@
 						if (!confirm('Overwrite local storage?'))
 							return;
 						search = false;
+						for (var i in hbrStyle) {
+							var pfp = hbrStyle[i];
+							localStorage.setItem(pfp.id, pfp.limitBreak);
+						}
 					}
 					if ((refreshOnly ? -1 : 4) === pfp.limitBreak) {
 						pfp.limitBreak = -1;
@@ -368,9 +372,8 @@
 					var styleCount = getStyleCount();
 					styleSum[0].textContent = styleCount + '/' + styles.length + '\n　';
 					styleSum[1].textContent = '\n' + ((100 * styleCount / styles.length).toFixed(1)) + '%';
-					if (!refreshOnly) {
+					if (!refreshOnly)
 						localStorage.setItem(pfp.id, pfp.limitBreak);
-					}
 				};
 				var onPointerupPfp = function(e) {
 					e.preventDefault();

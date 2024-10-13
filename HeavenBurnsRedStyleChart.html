@@ -349,6 +349,10 @@
 					return count;
 				};
 				var updateLB = function(pfp, refreshOnly = false) {
+					if (search && !refreshOnly && confirm('Overwrite local storage?'))
+						search = false;
+					else
+						return;
 					if ((refreshOnly ? -1 : 4) === pfp.limitBreak) {
 						pfp.limitBreak = -1;
 						pfp.style.opacity = '' + opacityPfp;
@@ -364,10 +368,7 @@
 					styleSum[0].textContent = styleCount + '/' + styles.length + '\n　';
 					styleSum[1].textContent = '\n' + ((100 * styleCount / styles.length).toFixed(1)) + '%';
 					if (!refreshOnly) {
-						if (search && confirm('Overwrite local storage?'))
-							search = false;
-						if (!search)
-							localStorage.setItem(pfp.id, pfp.limitBreak);
+						localStorage.setItem(pfp.id, pfp.limitBreak);
 					}
 				};
 				var onPointerupPfp = function(e) {

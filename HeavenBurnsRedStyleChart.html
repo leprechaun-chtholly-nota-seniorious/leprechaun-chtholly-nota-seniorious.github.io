@@ -354,8 +354,8 @@
 							return;
 						search = false;
 						for (var i in hbrStyle) {
-							var pfp = hbrStyle[i];
-							localStorage.setItem(pfp.id, pfp.limitBreak);
+							var p = hbrStyle[i];
+							localStorage.setItem(p.id, p.limitBreak);
 						}
 					}
 					if ((refreshOnly ? -1 : 4) === pfp.limitBreak) {

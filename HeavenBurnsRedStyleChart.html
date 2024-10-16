@@ -583,7 +583,7 @@
 							e.target.style.backgroundColor = bgShare[0];
 							var l = [];
 							for (var i in urls)
-								l.push(new bigDecimal(undefined === hbrStyle[i] ? -1 : (hbrStyle[i].limitBreak + 1)));
+								l.push(new bigDecimal((undefined === hbrStyle[i] ? -1 : hbrStyle[i].limitBreak) + 1));
 							var s = new bigDecimal(0);
 							for (var i in urls)
 								s = s.multiply(D6).add(l.pop());

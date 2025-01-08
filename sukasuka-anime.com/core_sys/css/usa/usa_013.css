@@ -1,0 +1,84 @@
+.body--mobile #header {
+	margin-bottom: 130px;
+}
+.body--mobile #menu_ocbt {
+	background: url(../../images/main/top/frame_line.jpg) repeat-x bottom, url(../../images/main/top/paper.jpg);
+	height: 130px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1500;
+	/* display: flex !important; */
+	
+	-webkit-box-pack: center;
+	
+	        justify-content: center;
+	-webkit-box-align: center;
+	        align-items: center;
+	width: 100%;
+}
+.body--mobile #menu_ocbt>img {
+	height: 60px
+}
+.body--mobile #g_navi {
+	//
+	background: #cac4b2;
+	position: absolute;
+	top: 130px;
+	left: 0px;
+	margin: 0;
+	z-index: 1400;
+	display: block !important;
+	width: 100%;
+	-webkit-transition: 1s;
+	transition: 1s;
+	-webkit-transform: translate(0, -100%);
+	        transform: translate(0, -100%);
+}
+.body--mobile #g_navi.on {
+	-webkit-transform: translate(0, -130px);
+	        transform: translate(0, -130px);
+}
+.body--mobile #g_navi.scrollable {
+	overflow: scroll !important;
+	height: 100vh;
+}
+.body--mobile #g_navi ul:not(.sociallist) {
+	display: block !important;
+}
+.body--mobile #g_navi li {
+	font-size: 48px !important;
+	line-height: 2;
+	letter-spacing: 0.2em;
+	width: 100%;
+	text-align: center;
+}
+.body--mobile #g_navi .sociallist {
+	-webkit-box-orient: horizontal !important;
+	-webkit-box-direction: normal !important;
+	        flex-direction: row !important;
+	-webkit-box-pack: center !important;
+	        justify-content: center !important;
+}
+.body--mobile #g_navi .sociallist__item {
+	min-width: 124px;
+	height: 124px;
+	margin: 0 20px;
+}
+.body--mobile #g_navi .sociallist__item img {
+	height: 100%;
+}
+.body--mobile .spMenu_after {
+	display: block;
+}
+.body--mobile .js-menuClose {
+	text-align: center;
+	margin: 60px 0 36px;
+	display: block;
+}
+.body--mobile .js-menuClose img {
+	height: 60px;
+}
+.body--mobile .main_sa02 {
+	top: 170px;
+}

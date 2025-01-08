@@ -1,0 +1,32 @@
+html {overflow-y:scroll;}
+
+#wrapper{
+min-width:1100px;
+}
+
+#footer{
+background:#cac4b2;
+}
+
+#loading{
+display:none;
+position:fixed;
+top:0;
+right:0;
+bottom:0;
+left:0;
+background:#fff;
+z-index:5999;
+}
+
+.loading_logo {
+  position: fixed;
+  top: -100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 20vw;
+  height:auto;
+  background:url(../../../../images/main/top/loading_logo.png) center center/contain no-repeat;
+}

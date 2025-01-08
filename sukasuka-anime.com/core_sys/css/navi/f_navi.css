@@ -1,0 +1,24 @@
+/* フッタナビユニット指定
+---------------------------------------------*/
+/* エリア指定 */
+#f_navi {
+height: 50px;
+margin: 0px;
+padding: 0px;
+}
+
+/* リスト枠指定 */
+#f_navi ul {
+list-style: none;
+margin: 0px;
+padding: 25px 0px 0px 10px;
+text-align: left;
+}
+
+/* リスト項目指定 */
+#f_navi li {
+display: inline; 
+margin: 0px 10px 0px 0px;
+padding: 0px 0px 0px 12px;
+background: URL(../../images/sys/ar01_gl01.gif) left center no-repeat;
+}

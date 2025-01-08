@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<!-- Mirrored from sukasuka-anime.com/story/08.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Mar 2022 04:10:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Story -TVアニメ「終末なにしてますか？ 忙しいですか？ 救ってもらっていいですか？」公式サイト-</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="robots" content="follow,index" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="viewport" content="width=1200">
+<link href="../../fonts.googleapis.com/cssa37a.css?family=Elsie" rel="stylesheet">
+<link rel="stylesheet" href="../core_sys/images/others/css/normalize.css">
+<link rel="stylesheet" href="../core_sys/css/import/contents/004/set.css" type="text/css" />
+<link rel="stylesheet" href="../core_sys/css/import/contents/004/dez_pt.css" type="text/css" />
+<link rel="stylesheet" href="../core_sys/css/import/contents/004/unit.css" type="text/css" />
+<link rel="stylesheet" href="../core_sys/css/fsc/fss.css" type="text/css" />
+<link rel="alternate stylesheet" href="../core_sys/css/fsc/fsm.css" type="text/css" title="fsm" />
+<link rel="alternate stylesheet" href="../core_sys/css/fsc/fsl.css" type="text/css" title="fsl" />
+<script type="text/javascript" src="../core_sys/js/common.js"></script>
+<script type="text/javascript" src="../core_sys/js/user.js"></script>
+<script src="../../ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(function(){
+  var target = '#c_list_block_0001 a';
+  $(target).each(function(){
+    var targetHref = $(this).attr('href');
+    $(this).attr('href',targetHref + '#c_list_block_0001');
+  });
+});
+</script>
+
+<script>
+$(function() {
+	var pos = 0;
+	var length = $('a.img_link').length;
+	var timer = null;
+	var time = 4000; //0にすると自動送り停止
+
+	function setNext() {
+		if(time > 0) {
+			if(timer) {
+				clearTimeout(timer);
+			}
+			timer = setTimeout(function() {
+				timer = null;
+				pos++;
+				if(pos >= length) {
+					pos = 0;
+				}
+				$('a.img_link:eq('+pos+')').trigger('click');
+				setNext();
+			}, time);
+		}
+	}
+
+
+	$('a.img_link').each(function(index,element) {
+		$('#target').append('<img src="'+$(this).attr('href')+'" class="prev_img" id="prev_img'+index+'" />');
+		$(this).attr('id', 'gallery_link'+(index+1));
+		if(index > 0) {
+			$('#prev_img'+index).css({'opacity': 0, 'position':'absolute'});
+			$(this).addClass('gallery_link gallery_link_off');
+		} else {
+			$('#prev_img'+index).css({'position':'absolute'});
+			$(this).addClass('gallery_link gallery_link_on');
+		}
+
+		$(this).on('click', function() {
+			$('.gallery_link').not(this).removeClass('gallery_link_on').addClass('gallery_link_off');
+			$(this).removeClass('gallery_link_off').addClass('gallery_link_on');
+			for(var i=0; i<length; i++) {
+				if(i===index) {
+					$('#prev_img'+i).stop().animate({'opacity': 1}, 500);
+				} else {
+					$('#prev_img'+i).stop().animate({'opacity': 0}, 500);
+				}
+			}
+			pos = index;
+			setNext();
+			return false;
+		});
+	});
+
+	$('.prev_img').touchwipe({
+		wipeLeft: function() {
+			pos++;
+			if(pos >= length) {
+				pos = 0;
+			}
+			$('a.img_link:eq('+pos+')').trigger('click');
+			setNext();
+		},
+		wipeRight: function() {
+			pos--;
+			if(pos < 0) {
+				pos = length-1;
+			}
+			$('a.img_link:eq('+pos+')').trigger('click');
+			setNext();
+		},
+		min_move_x: 20,
+		min_move_y: 20,
+		preventDefaultEvents: true
+	});
+
+	setNext();
+});
+</script>
+
+<script>
+$(function(){
+  var target = '#c_list_block_0003 a';
+  $(target).each(function(){
+    var targetHref = $(this).attr('href');
+    $(this).attr('href',targetHref + '#c_list_block_0003');
+  });
+});
+</script>
+
+</head>
+
+<body id="layout8">
+
+
+<form method="post" action="http://sukasuka-anime.com/story/void(0);" id="act">
+<!-- ＜wrapper＞01start -->
+<div id="wrapper">
+<div id="wrapper_inner">
+
+<!-- ＜container＞start -->
+<div id="container">
+<div id="container_inner">
+
+<!-- ＜header＞start -->
+<div id="header">
+<div id="header_inner">
+<div class="header_sa01">
+<div class="header_sa01_c">
+<div id="menu_ocbt" style="display: none;">
+<img src="../core_sys/images/main/top/menu_ocbt.png">
+</div>
+<script>
+var _ua = (function(u){
+  return {
+    Tablet:(u.indexOf("windows") != -1 && u.indexOf("touch") != -1)
+      || u.indexOf("ipad") != -1
+      || (u.indexOf("android") != -1 && u.indexOf("mobile") == -1)
+      || (u.indexOf("firefox") != -1 && u.indexOf("tablet") != -1)
+      || u.indexOf("kindle") != -1
+      || u.indexOf("silk") != -1
+      || u.indexOf("playbook") != -1,
+    Mobile:(u.indexOf("windows") != -1 && u.indexOf("phone") != -1)
+      || u.indexOf("iphone") != -1
+      || u.indexOf("ipod") != -1
+      || (u.indexOf("android") != -1 && u.indexOf("mobile") != -1)
+      || (u.indexOf("firefox") != -1 && u.indexOf("mobile") != -1)
+      || u.indexOf("blackberry") != -1
+  }
+})(window.navigator.userAgent.toLowerCase());
+
+var defaultOrientation; // window.orientationが0または180の時に縦長であればtrue
+
+// 初期化処理
+window.addEventListener('load', function() {
+  if('orientation' in window) {
+    var o1 = (window.innerWidth < window.innerHeight);
+    var o2 = (window.orientation % 180 == 0);
+    defaultOrientation = (o1 && o2) || !(o1 || o2);
+    checkOrientation();
+  }
+  // もしあれば、その他Webアプリの初期化処理
+}, false);
+
+// 画面回転時に向きをチェック
+window.addEventListener('resize', checkOrientation, false);
+function checkOrientation () {
+  if('orientation' in window) {
+    // defaultOrientationがtrueの場合、window.orientationが0か180の時は縦長
+    // defaultOrientationがfalseの場合、window.orientationが-90か90の時は縦長
+    var o = (window.orientation % 180 == 0);
+    if((o && defaultOrientation) || !(o || defaultOrientation)) {
+      // ここに縦長画面への切り替え処理を記述
+      console.log('portrait');
+    }
+    else {
+      // ここに横長画面への切り替え処理を記述
+      console.log('landscape');
+    }
+  }
+}
+
+$(function(){
+if(_ua.Mobile || _ua.Tablet){
+//    $(window).on("scroll", function(){
+//        $("#g_navi,#menu_ocbt").css("left", $(window).scrollLeft());
+//    });
+
+// グローバルメニュー
+
+        $('body').addClass('body--mobile');
+        var gn = "#g_navi";
+        var gnH = $(gn).outerHeight();
+        var btH = $("#menu_ocbt").outerHeight();
+
+        $(gn).addClass("off");
+        $("#menu_ocbt,.js-menuClose").on("click", function(){
+            if($(gn).hasClass("off")){
+                $(gn)
+                    .removeClass("off")
+                    .addClass("on")
+                setHeight();
+            }else{
+                $(gn)
+                    .removeClass("on scrollable")
+                    .addClass("off")
+            }
+                         return false;
+        });
+
+        $(window).on("orientationchange resize", function() {
+            if($(gn).hasClass("on")){
+                setHeight();
+            }
+        });
+
+        
+
+}
+});
+</script></div>
+</div>
+<div class="header_sa02">
+<div class="header_sa02_c">
+<!-- global link start -->
+	<div id="g_navi">
+	<ul>
+<li class="gh_item1 gh_lino12"><a href="../index-2.html" title="TOP"><span class="gh_sno12">TOP</span></a></li><li class="gh_item2 gh_lino1"><a href="../news/index.html" title="News"><span class="gh_sno1">News</span></a></li><li class="gh_item3 gh_lino2"><a href="../about/index.html" title="About"><span class="gh_sno2">About</span></a></li><li class="gh_item4 gh_lino3"><a href="../onair/index.html" title="OnAir"><span class="gh_sno3">OnAir</span></a></li><li class="gh_item5 gh_lino4"><a href="../staffcast/index.html" title="Staff/Cast"><span class="gh_sno4">Staff/Cast</span></a></li><li class="gh_item6 gh_lino5"><a href="12.html" class="crt" title="Story"><span class="gh_sno5">Story</span></a></li><li class="gh_item7 gh_lino6"><a href="../chara/willem.html" title="Character"><span class="gh_sno6">Character</span></a></li><li class="gh_item8 gh_lino7"><a href="../bddvd/index.html" title="Blu-ray & DVD"><span class="gh_sno7">Blu-ray & DVD</span></a></li><li class="gh_item9 gh_lino8"><a href="../music/index.html" title="Music"><span class="gh_sno8">Music</span></a></li><li class="gh_item10 gh_lino9"><a href="../goods/index.html" title="Goods"><span class="gh_sno9">Goods</span></a></li><li class="gh_item11 gh_lino11"><a href="../special/index.html" title="Special"><span class="gh_sno11">Special</span></a></li></ul>
+<div class="spMenu_after">
+<ul class="sociallist">
+  <li class="sociallist__item">
+    <a class="js-share--twitter" href="https://twitter.com/intent/tweet?text=" rel="nofollow" target="_blank">
+        <img src="../core_sys/images/main/top/twitter.png">
+    </a>
+  </li>
+  <li class="sociallist__item">
+    <a class="js-share--facebook" href="http://www.facebook.com/sharer.php?u=" target="_blank">
+        <img src="../core_sys/images/main/top/facebook.png">
+    </a>
+  </li>
+</ul>
+<div class="js-menuClose"><img src="../core_sys/images/main/top/menu_ocbt.png"></div>
+</div>
+
+
+<script>
+$(function(){
+  //シェアボタンを取得
+  const shareTwitter = document.getElementsByClassName('js-share--twitter');  // ツイートボタンを取得
+  const shareFacebook = document.getElementsByClassName('js-share--facebook');  // ツイートボタンを取得
+  const shareLine = document.getElementsByClassName('js-share--line');  // ツイートボタンを取得
+
+  // 内容を取得
+  const url = location.href;  // ページURLを取得
+  const title = document.title;  // ページタイトルを取得
+  const desc = $("meta[name=description]").attr("content"); //ページディスクリプションを取得
+  const hashtag = ""; // ハッシュタグ（data-hashtags属性）を取得
+  const related = "";  // おすすめユーザー（data-related属性）を取得
+
+  // 内容を合わせる
+  const twitterHref = (encodeURI(decodeURI('https://twitter.com/intent/tweet?text='+ title + '&url=' + url + '&hashtags=' + hashtag + '&related=' + related)));
+  const facebookHref = (encodeURI(decodeURI('http://www.facebook.com/sharer.php?u='+ url)));
+  const lineHref = (encodeURI(decodeURI('http://line.me/R/msg/text/?'+ title + '%0D%0A' +  '&url=' + url)));
+
+  // 内容を書き換え
+  $(shareTwitter).attr('href',twitterHref);
+  $(shareFacebook).attr('href',facebookHref);
+  $(shareLine).attr('href',lineHref);
+
+  // リンクを新規サブウィンドウで表示
+  $(shareTwitter).click(newWindow);
+  $(shareFacebook).click(newWindow);
+  function newWindow(){
+    const w = 550; //ウィンドウ幅
+    const h = 450; //ウィンドウ高さ
+    const x = (screen.width - w) / 2; //x軸中央揃え
+    const y = (screen.height - h) / 2; //y軸中央揃え
+    window.open(this.href,null, 'screenX='+x+',screenY='+y+',left='+x+',top='+y+',width='+w+',height='+h);
+    return false;
+  }
+});
+</script>	</div>
+<!-- global link end -->
+</div>
+</div>
+</div>
+</div>
+<!-- ＜header＞end -->
+
+<!-- ＜ext_area_01＞start -->
+<div id="ext_area_01">
+<div id="ext_area_01_inner">
+<div class="ext_area_01_sa01">
+<div class="ext_area_01_sa01_c">
+<div class="hero_wrap">
+  <div class="hero_logo"><img src="../core_sys/images/main/cont/hero_logo.png" alt=""></div>
+  <div class="hero_bg parallax" data-offset="5"><img src="../core_sys/images/main/cont/hero_bg_story.jpg" alt=""></div>
+  <h1 class="hero_cate"><img src="../core_sys/images/main/cont/hero_cate_story.png" alt="story"></h1>
+  <div class="hero_chara parallax" data-offset="-10"><img src="../core_sys/images/main/cont/hero_chara_story.png" alt=""></div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $(window).mousemove(function(e){
+        var w = $(window).width();
+        var h = $(window).height();
+        var offsetX = 0.5 - e.pageX / w;
+        var offsetY = 0.5 - e.pageY / h;
+        $(".parallax").each(function(i, el) {
+            var offset = parseInt($(el).data('offset'));
+            var translate = "translate(" + offsetX * offset + "px," + offsetY * offset + "px)";
+            $(el).css({
+                '-webkit-transform': translate,
+                'transform': translate
+            });
+        });
+    });
+});
+
+
+</script></div>
+</div>
+</div>
+</div>
+<!-- ＜ext_area_01＞end -->
+
+<!-- ＜contents＞start -->
+<div id="contents">
+<div id="contents_inner">
+
+<!-- ＜contents_main＞start -->
+<div id="contents_main">
+<div id="contents_main_inner">
+
+<!-- ＜main＞start -->
+<div id="main">
+<div id="main_inner">
+<div class="main_sa01">
+<div class="main_sa01_c">
+<div class="c_list_block" id="c_list_block_0003">
+<script>
+$(function() {
+	var tmp = location.href.split('../index.html');
+	var nowPage = tmp[tmp.length-1];
+
+	var targetObj = $('#c_list_block_0003 a');
+	targetObj.each(function(index, element){
+		$(this).removeClass('crt');
+		
+		tmp = $(this).attr('href').split('../index.html');
+		var page = tmp[tmp.length-1];
+		if(page == nowPage) {
+			$(this).addClass('crt');
+		}
+	});
+ 
+      var targetFirst = ("#c_list_block_0001 nwu_box:eq(0) a");
+       if( !$(targetObj).hasClass("crt") ){
+         $(targetFirst).addClass('crt');
+      }
+});
+</script><div class="list_type01" id="ContentsListUnit03">
+	<table summary="List_Type01">
+	<tr class="bg_b">
+	<td class="read"><div class="title"><a href="index.html">Introduction</a></div></td>
+	</tr>
+	<tr class="bg_a">
+	<td class="read"><div class="title"><a href="01.html">＃１</a></div></td>
+	</tr>
+	<tr class="bg_b">
+	<td class="read"><div class="title"><a href="02.html">＃２</a></div></td>
+	</tr>
+	<tr class="bg_a">
+	<td class="read"><div class="title"><a href="03.html">＃３</a></div></td>
+	</tr>
+	<tr class="bg_b">
+	<td class="read"><div class="title"><a href="04.html">＃４</a></div></td>
+	</tr>
+	<tr class="bg_a">
+	<td class="read"><div class="title"><a href="05.html">＃５</a></div></td>
+	</tr>
+	<tr class="bg_b">
+	<td class="read"><div class="title"><a href="06.html">＃６</a></div></td>
+	</tr>
+	<tr class="bg_a">
+	<td class="read"><div class="title"><a href="07.html">＃７</a></div></td>
+	</tr>
+	<tr class="bg_b">
+	<td class="read"><div class="title"><a href="08.html">＃８</a></div></td>
+	</tr>
+	<tr class="bg_a">
+	<td class="read"><div class="title"><a href="09.html">＃９</a></div></td>
+	</tr>
+	<tr class="bg_b">
+	<td class="read"><div class="title"><a href="10.html">＃１０</a></div></td>
+	</tr>
+	<tr class="bg_a">
+	<td class="read"><div class="title"><a href="11.html">＃１１</a></div></td>
+	</tr>
+	<tr class="bg_b">
+	<td class="read"><div class="title"><a href="12.html">＃１２</a></div></td>
+	</tr>
+	</table>
+</div>
+</div></div>
+</div>
+<div class="main_sa02">
+<div class="main_sa02_c">
+<!-- contents start -->
+	<div id="cms_block">
+<script>
+$(document).ready(function(){
+// カテゴリ名より記号を削除したものを抽出
+var ctName = "story".toLowerCase().replace(/[^0-9a-zA-Z]/g,"");
+// bodyにclassを付与
+$('body').addClass('cate_' + ctName);
+});
+
+$(document).ready(function(){
+$('.js-basis49').parent().parent().addClass('basis49');
+});
+</script>	<div class="page_42">
+	<div class="block line_00">
+	<div class="block_inner">
+	<h2 class="ti_deco mgt0 mgb0">＃８</h2>	<div class="atl_inner">
+	<!-- main strings block start -->
+	<div class="read"></div>
+	<!-- main strings block end -->
+	</div>
+	</div>
+	</div>
+	<div class="block line_01">
+	<div class="block_inner">
+	<h3 class="ti_h3 mgt0">いずれその陽は落ちるとしても</h3>	<div class="atl_inner">
+	<!-- main strings block start -->
+	<div class="read"><div id="target" class="sceneArea"></div>
+<p class="story_desc">
+<span>■脚本：根元歳三</span><br>
+<span>■絵コンテ：西野武志・佐藤英一</span><br>
+<span>■演出：西野武志</span><br>
+<span>■作画監督：松尾信之・芳賀亮・下條祐未</span>
+
+<br>
+<br>
+地上のサルベイジャーの件で４９番浮遊島の基地に出頭するように命を受けるヴィレム。妖精倉庫から妖精兵を連れてくるように指示が出るも、気乗りしないヴィレム。<br>
+<br>
+「妖精兵を一人地上に送れと言われた」
+</p></div>
+	<!-- main strings block end -->
+	<!-- images block start -->
+	<div class="img_u wdx250">
+	<div class="ph"><a href="../core_sys/images/contents/00000042/block/00000118/0000012919ec.jpg?1553087364" target="_blank" class="img_link"><img src="../core_sys/images/contents/00000042/block/00000118/sn_0000012919ec.jpg?1553087364" alt="" title="" /></a></div>
+	<div class="cap_no"></div>
+	<div class="ph"><a href="../core_sys/images/contents/00000042/block/00000118/0000013019ec.jpg?1553087364" target="_blank" class="img_link"><img src="../core_sys/images/contents/00000042/block/00000118/sn_0000013019ec.jpg?1553087364" alt="" title="" /></a></div>
+	<div class="cap_no"></div>
+	<div class="ph"><a href="../core_sys/images/contents/00000042/block/00000118/0000013119ec.jpg?1553087364" target="_blank" class="img_link"><img src="../core_sys/images/contents/00000042/block/00000118/sn_0000013119ec.jpg?1553087364" alt="" title="" /></a></div>
+	<div class="cap_no"></div>
+	<div class="ph"><a href="../core_sys/images/contents/00000042/block/00000118/0000013219ec.jpg?1553087364" target="_blank" class="img_link"><img src="../core_sys/images/contents/00000042/block/00000118/sn_0000013219ec.jpg?1553087364" alt="" title="" /></a></div>
+	<div class="cap_no"></div>
+	<div class="ph"><a href="../core_sys/images/contents/00000042/block/00000118/0000013319ec.jpg?1553087364" target="_blank" class="img_link"><img src="../core_sys/images/contents/00000042/block/00000118/sn_0000013319ec.jpg?1553087364" alt="" title="" /></a></div>
+	<div class="cap_no"></div>
+	</div>
+	<!-- images block end -->
+	</div>
+	</div>
+	</div>
+	</div>
+<!--	<div class="sc"><a href="#top"><img src="../core_sys/images/sys/pagetop_bt.gif" alt="page top" /></a></div>  -->
+
+<script>
+$(function() {
+  // スクロールのオフセット値
+  var offsetY = 0;
+  // スクロールにかかる時間
+  var time = 500;
+
+  // ページ内リンクのみを取得
+  $('a[href^="#"]').click(function() {
+    // 移動先となる要素を取得
+    var target = $(this.hash);
+    if (!target.length) return ;
+    // 移動先となる値
+    var targetY = target.offset().top+offsetY;
+    // スクロールアニメーション
+    $('html,body').animate({scrollTop: targetY}, time, 'swing');
+    // ハッシュ書き換えとく
+    window.history.pushState(null, null, this.hash);
+    // デフォルトの処理はキャンセル
+    return false;
+  });
+});
+</script>	</div>
+<!-- contents end -->
+</div>
+</div>
+<div class="main_sa08">
+<div class="main_sa08_l">
+</div>
+<div class="main_sa08_r">
+<div id="pagetop_bt">
+  <a href="#wrapper"><img src="../core_sys/images/main/top/pagetop.png"></a>
+</div>
+<script>
+  $(function() {
+    //スクロールページトップ表示
+    var showFlag = false;
+    var topBtn = $('#pagetop_bt');
+    var showFlag = false;
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 100) {
+        if (showFlag == false) {
+          showFlag = true;
+          topBtn.stop().removeClass("dropdown");
+        }
+      } else {
+        if (showFlag) {
+          showFlag = false;
+          topBtn.stop().addClass("dropdown");
+        }
+      }
+    });
+
+    topBtn.click(function() {
+      $('body,html').animate({
+        scrollTop: 0
+      }, 500, 'swing');
+      return false;
+    });
+
+$("#cms_block .read, #news_block .read").each(function(){
+           $(this).html( $(this).html().replace(/((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g,
+              '<a href="$1" target="_blank">$1</a> ') );
+});
+
+  });
+</script></div>
+</div>
+</div>
+</div>
+<!-- ＜main＞end -->
+
+</div>
+</div>
+<!-- ＜contents_main＞end -->
+
+</div>
+</div>
+<!-- ＜contents＞end -->
+
+<!-- ＜ext_area_02＞start -->
+<!-- ＜ext_area_02＞end -->
+
+<!-- ＜footer＞start -->
+<div id="footer">
+<div id="footer_inner">
+<div class="footer_sa01">
+<div class="footer_sa01_c">
+<!-- バナーユニット001ここから -->
+	<div id="bnu_001_c">
+	<p><a href="http://sneakerbunko.jp/series/shumatsu/" target="_blank"><img src="../core_sys/images/banner/0000000119ec.jpg?1553087364" alt="［スニーカー文庫公式サイト］終末なにしてますか？　忙しいですか？　救ってもらっていいですか？" title="［スニーカー文庫公式サイト］終末なにしてますか？　忙しいですか？　救ってもらっていいですか？" /></a></p>
+	</div>
+<!-- バナーユニット001ここまで -->
+</div>
+</div>
+<div class="footer_sa02">
+<div class="footer_sa02_c">
+<!-- footer navi start -->
+<div id="f_navi">
+	<ul>
+	</ul>
+</div>
+<!-- footer navi end --></div>
+</div>
+<div class="footer_sa03">
+<div class="footer_sa03_c">
+<!-- copyright start -->
+<div id="cw">
+<p><small>&copy; 2017枯野瑛・ue／KADOKAWA／６８番島・妖精倉庫</small></p>
+</div>
+<!-- copyright end --></div>
+</div>
+</div>
+</div>
+<!-- ＜footer＞end -->
+
+</div>
+</div>
+<!-- ＜container＞end -->
+
+</div>
+</div>
+<!-- ＜wrapper＞01end -->
+</form>
+<script>
+$(function() {
+	$('a').each(function(i) {
+		var href = $(this).attr('href');
+		if(typeof href !== 'undefined' && href !== false ){
+			if(href.indexOf('index.html') >= 0) {
+				$(this).attr('href', href.replace('index.html', ''));
+			}
+		}
+	});
+});
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-91172311-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+<!-- Mirrored from sukasuka-anime.com/story/08.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Mar 2022 04:10:21 GMT -->
+</html>
+<!-- InstanceEnd -->

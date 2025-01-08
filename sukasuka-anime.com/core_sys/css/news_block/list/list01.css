@@ -1,0 +1,63 @@
+/* 一覧リストテーブルレイアウト(テキスト一覧・サムネイル付)
+---------------------------------------------*/
+#list_01 table
+,#list_01 table tbody
+,#list_01 tr{
+}
+
+/* 表本枠指定 */
+#list_01 {
+  width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#list_01 p {
+}
+
+/* リストテーブル基本枠指定 */
+#list_01 table {
+}
+
+/* セル指定 */
+#list_01 tr {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border: 1px solid #949293;
+  border-radius: 10px;
+  margin: 30px 0;
+  transition:0.5s;
+}
+
+#list_01 tr:hover {
+  background: rgba(255, 250, 232, 0.67);
+}
+
+#list_01 td {
+}
+
+/* 日付セル指定 */
+#list_01 td.day {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e62e8b;
+}
+
+/* 本文セル指定 */
+#list_01 td.read {
+}
+
+#list_01 td.read a{
+  text-decoration:none;
+}
+
+#list_01 td.read a:hover{
+  text-decoration:underline;
+}
+
+/* 専用装飾指定
+---------------------------------------------*/
+/* タイトル指定 */
+#list_01 .title {
+}

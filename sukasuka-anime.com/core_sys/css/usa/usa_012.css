@@ -1,0 +1,83 @@
+.main_sa02{
+  position:absolute;
+  top:100px;
+  left: 32px;
+  width:60%;
+  min-width: 500px;
+  transition:0.5s;
+}
+
+@media screen and (max-width:1445px){
+.main_sa02{width: 95%;}
+}
+
+@media screen and (max-width:980px){
+.main_sa02{
+width:50%;
+}
+}
+
+
+.main_sa02_c{
+  display:flex;
+  flex-wrap:wrap;
+//  height: 90vh;
+  min-height: 950px;
+  justify-content:space-between
+}
+
+.body--mobile .main_sa02_c{
+min-height: 1080px;
+}
+
+
+.logo {
+  animation: fadein 2s ease 5s 1 both;
+  z-index:30;
+  overflow:hidden;
+  max-height:723px;
+}
+
+.logo img{
+  width: 25vw;
+  min-width:335px;
+  max-width:487px;
+}
+
+.catch {
+  animation: rollin 6s ease 3s 1 both;
+  z-index:30;
+  margin-top:30px;
+  overflow:hidden;
+  max-height: 379px;
+  max-width:193px;
+}
+
+@keyframes rollin{
+0% { opacity:0; height:0; }
+100% { opacity:1; height:1000px; }
+}
+
+@keyframes rollin-x{
+0% { opacity:0; width:0; }
+100% { opacity:1; width:1000px; }
+}
+
+.catch img{
+  width:12vw;
+  max-width:193px;
+  min-width: 130px;
+}
+
+.body--mobile .catch img{
+width:20vw;
+}
+
+
+.top_onair {
+  animation: fadein 2s ease 4s 1 both;
+  z-index:30;
+  flex-basis:100%;
+  height: 121px;
+  margin: auto 0 0;
+}

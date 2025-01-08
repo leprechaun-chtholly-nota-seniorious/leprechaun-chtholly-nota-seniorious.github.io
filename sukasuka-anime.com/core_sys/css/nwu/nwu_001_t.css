@@ -1,0 +1,190 @@
+/* ニュースユニットT01指定
+---------------------------------------------*/
+/* 枠指定 */
+#nwu_001_t {
+width:96%;
+max-width:1040px;
+margin:0 auto;
+font-size:13px;
+color:#403314;
+font-weight:500;
+display:flex;
+}
+/* 新着アイコン指定
+---------------------------------------------*/
+#nwu_001_t .new_ic {
+padding: 0px 0px 0px 30px;
+background: url(../../images/sys/new_ic01.gif) left 2px no-repeat;
+}
+
+/* リストパターン03選択時指定
+---------------------------------------------*/
+/* リスト指定 */
+.news_wrap,
+.twitter_wrap {
+position:relative;
+padding: 18px 30px 18px 30px;
+background: rgba(255, 245, 213, 0.5);
+border-radius: 10px;
+border: 2px solid #949293;
+flex-basis:50%;
+margin: 0 1%;
+}
+
+/* 
+---------------------------------------------*/
+.news_head,
+.twitter_head{
+  font-family: 'Elsie', cursive;
+  font-size:24px !important;
+  text-align:center;
+  background: url(../../images/main/top/decoretion.png) no-repeat center bottom;
+  height: 70px;
+  margin: 0 0 1em;
+}
+
+/* 
+---------------------------------------------*/
+.news_wrap dl,
+.twitter_wrap iframe{
+height:445px !important;
+vertical-align: bottom;
+}
+
+.news_wrap dl {
+overflow:auto;
+border-top:1px solid #949293;
+border-bottom:1px solid #949293;
+margin: 0;
+}
+
+.news_wrap dt {
+margin: 0 auto 10px;
+padding: 0;
+font-weight: normal;
+font-size:11px;
+color:#e62e8b;
+font-weight:bold;
+}
+
+.news_wrap dd {
+margin: 0 0 20px;padding: 0 0 20px;border-bottom: 1px dotted #8a94a0;line-height:2em;}
+
+/* 
+---------------------------------------------*/
+.news_more,
+.twitter_follow{
+  text-align:center;
+  margin: 15px 0px 0px;
+}
+
+.news_more a,
+.twitter_follow a{
+font-size:20px;
+text-decoration:none;
+font-family: 'Elsie', cursive;
+color:#403314;
+font-weight: 600;
+}
+
+.news_more a:hover,
+.twitter_follow a:hover{
+color:#e62e8b;
+}
+
+.twitter_follow>a>span{
+transition:0.5s;
+display: inline-block;
+padding: 1px 5px 0 8px;
+margin:0 1.5em 0 0;
+background:#403314;
+color:#fff;
+height:24px;
+display:inline-block;
+z-index:1;
+position:relative;
+font-size: 14px;
+top:-0.2em;
+}
+
+.twitter_follow>a>span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -24px;
+    z-index: -1;
+    margin: 0;
+    transition: 0.5s;
+    border-color: transparent transparent transparent #403314;
+    border-style: solid;
+    border-width: 12px;
+}
+
+.twitter_follow>a:hover>span{
+background:#e62e8b;
+}
+
+.twitter_follow>a:hover>span::after{
+border-color: transparent transparent transparent #e62e8b;
+}
+
+/* 飾り枠 コーナー */
+.news_wrap::before,
+.news_wrap::after,
+.news_wrap dl::before,
+.news_wrap  dl::after,
+.twitter_wrap::before,
+.twitter_wrap::after,
+.twitter_follow::before,
+.twitter_follow::after{
+content:"";
+height:50px;
+width:50px;
+position:absolute;
+background: url(../../images/main/top/corner.png) no-repeat left top;
+z-index:5;
+}
+
+/* 飾り枠 左上 */
+.news_wrap::before,
+.twitter_wrap::before {
+top:0;
+left:0;
+}
+
+/* 飾り枠 右上 */
+.news_wrap::after,
+.twitter_wrap::after {
+top:0;
+right:0;
+transform:rotate(90deg);
+}
+
+/* 飾り枠 左下 */
+.news_wrap dl::before,
+.twitter_follow::before {
+bottom:0;
+left:0;
+transform:rotate(-90deg);
+}
+
+/* 飾り枠 右下 */
+.news_wrap  dl::after,
+.twitter_follow::after {
+bottom:0;
+right:0;
+transform:rotate(180deg);
+}
+
+
+/* 偽スマホ対応 */
+.body--mobile #nwu_001_t{
+    flex-direction:column;
+}
+
+.body--mobile .news_wrap,
+.body--mobile .twitter_wrap {
+    zoom: 2;
+    margin-bottom:4%;
+}

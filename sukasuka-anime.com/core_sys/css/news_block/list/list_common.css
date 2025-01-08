@@ -1,0 +1,103 @@
+/* 新着アイコン指定 */
+.new_ic {
+  position:relative;
+}
+
+.new_ic::before {
+  content:"New";
+  background:#e62e8b;
+  color:#fff;
+  margin:0 20px 0 0;
+  padding:0 0 0 4px;
+  font-family: 'Elsie Swash Caps' , 'Elsie', 'Yu Gothic', YuGothic, sans-serif;
+  display:inline-block;
+  width:40px;
+  height:24px;
+}
+
+.new_ic::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left:40px;
+  height:20px;
+  border-color: transparent transparent transparent #e62e8b;
+  border-style: solid;
+  border-width: 11px;
+}
+
+.nb_navi{
+font-weight: 200;
+margin: 0 auto;
+}
+
+.page{
+margin:0 auto 23px;
+text-align:center
+}
+
+.page_navi ul{
+display: flex;
+justify-content:center;
+align-items:center;
+margin: 0 auto;
+}
+
+.page_navi ul li{
+padding:0 15px 0;
+display:flex;
+align-items:center;
+height:16px;
+}
+
+.page_navi ul li:nth-child(2),
+.page_navi ul li:nth-child(3),
+.page_navi ul li:nth-child(4),
+.page_navi ul li:nth-child(5){
+border-right:1px solid #fff;
+}
+
+.page_navi ul li:last-child,
+.page_navi ul li:nth-last-child(2){
+border:none;
+}
+
+.page_navi .nb_pre,
+.page_navi .nb_nex{
+background: url(../../../images/main/chara/arrow.png) center/10px no-repeat;
+width: 33px;
+height: 33px;
+padding:0;
+transition:0.5s;
+}
+
+.page_navi .nb_pre{
+}
+
+.page_navi .nb_nex{
+transform: rotate(180deg);
+}
+
+.page_navi .nb_pre a,
+.page_navi .nb_nex a{
+width: 33px;
+height: 33px;
+display: block;
+}
+
+.page_navi .nb_pre span,
+.page_navi .nb_nex span{
+display:none;
+}
+
+.page_navi .nb_pre:hover,
+.page_navi .nb_nex:hover{
+filter:brightness(2);
+}
+
+
+.nom,
+.nb_crt{
+color:#e62e8b;
+font-weight:600;
+}

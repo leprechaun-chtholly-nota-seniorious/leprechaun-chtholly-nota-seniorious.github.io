@@ -1,0 +1,110 @@
+/* グローバルナビユニット(横)設定
+---------------------------------------------*/
+/* エリア指定 */
+
+#g_navi {
+	display: -webkit-box;
+	display: flex;
+	position: relative;
+	background: url(../../images/main/top/frame_line.jpg) repeat-x bottom,
+ url(../../images/main/top/paper.jpg);
+	-webkit-box-pack: center;
+	justify-content: center;
+}
+#g_navi::after {
+	content: "";
+	position: absolute;
+	margin: auto;
+	bottom: -25px;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	background: url(../../images/main/top/frame.png) no-repeat center;
+	height: 29px;
+	width: 100%;
+}
+/* リスト枠指定 */
+
+#g_navi ul:not(.sociallist) {
+	font-family: 'Elsie Swash Caps', 'Elsie', 'Yu Gothic', YuGothic, sans-serif;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	//height: 68px;
+	margin: 0;
+	padding: 0 1%;
+	flex-basis: 100%;
+	max-width: 1680px;
+}
+/* リスト項目指定 */
+
+#g_navi ul:not(.sociallist) li {
+	margin: 0;
+	font-size: 22px;
+	font-weight: 600;
+}
+/* リンク指定(通常) */
+
+#g_navi ul:not(.sociallist) a {
+	text-decoration: none;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+}
+/* リンク指定(オンマウス) */
+
+#g_navi ul:not(.sociallist) a:hover {
+	color: #fff;
+	text-shadow: 0 0 10px #f30a73, 0 0 10px #f30a73;
+}
+/* リンク指定(現在位置) */
+
+#g_navi ul:not(.sociallist) a.crt {
+	color: #fff;
+	text-shadow: 0 0 10px #f30a73, 0 0 10px #f30a73;
+}
+/* リンク指定(現在位置・オンマウス) */
+
+#g_navi ul:not(.sociallist) a.crt:hover {}
+/* リスト項目指定(リンクなし) */
+
+#g_navi li.no_link {
+	color: rgba(0, 0, 0, 0.3);
+}
+/* リスト項目指定(リンクなし・現在位置) */
+
+#g_navi li.crt {} .sociallist {
+	display: -webkit-box;
+	display: flex;
+	padding: 0 1% 0;
+}
+.sociallist__item {
+	display: inline-block;
+	margin: 5px 10px;
+	-webkit-transition: .1s;
+	transition: .1s;
+}
+.sociallist__item > a {
+	width: 100%;
+	height: 100%;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+}
+.sociallist__item:hover {
+	-webkit-filter: brightness(2);
+	filter: brightness(2);
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+.js-menuClose {
+	display: none;
+}
+.header_sa02 {
+	position: relative;
+}

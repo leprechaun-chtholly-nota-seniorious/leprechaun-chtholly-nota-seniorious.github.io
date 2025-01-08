@@ -1,0 +1,95 @@
+.main_bg{
+    position:absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    bottom: 0;
+    left: -5%;
+    right: 0;
+    background: url(../../images/main/top/main_bg.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    transition:0.5s;
+}
+
+.main_sa01_c{
+//height: 100vh;
+min-height: 1050px;
+position:relative;
+overflow: hidden;
+}
+
+.body--mobile .main_sa01_c{
+min-height: 1180px !important;
+}
+
+.main_chara_wrap{
+    transition:0.5s;width:100%;height:100%;max-width:1048px;max-height:1031px;position: absolute;bottom: -2px;right: 0;z-index: 1;}
+
+.main_chara_wrap div{
+width:100%;
+height:100%;
+position: absolute;
+bottom: -20px;
+right: 0;
+}
+
+
+.main_chara1{
+background:url(../../images/main/top/main_chara1.png);
+animation: fadein 1s ease 0s 1 both,walk 5s ease 0s infinite both;
+z-index:14;
+}
+
+.main_chara2{
+background:url(../../images/main/top/main_chara2.png);
+animation: fadein 1s ease 0.5s 1 both,walk_child 3.1s ease 0.5s infinite both;
+z-index:12;
+}
+
+.main_chara3{
+background:url(../../images/main/top/main_chara3.png);
+animation: fadein 1s ease 1s 1 both,walk_child 3.2s ease 1s infinite both;
+z-index:17;
+}
+
+.main_chara4{
+background:url(../../images/main/top/main_chara4.png);
+animation: fadein 1s ease 1.5s 1 both,walk_child 3.1s ease 1.5s infinite both;
+z-index:13;
+}
+
+.main_chara5{
+background:url(../../images/main/top/main_chara5.png);
+animation: fadein 1s ease 2s 1 both,walk_child 3.2s ease 2s infinite both;
+z-index:16;
+}
+
+.main_chara6{
+background:url(../../images/main/top/main_chara6.png);
+animation: fadein 1s ease 2.5s 1 both,walk_child 3.1s ease 2.5s infinite both;
+z-index:15;
+}
+
+.main_chara7{
+background:url(../../images/main/top/main_chara7.png);
+animation: fadein 1s ease 3s 1 both,walk_child 3.2s ease 3s infinite both;
+z-index:11;
+}
+
+
+@keyframes fadein{
+0% {opacity: 0;}
+100% {opacity: 1;}
+}
+
+@keyframes walk{
+0% {transform: translate(0);}
+50% {transform: translate(4px,10px);}
+}
+
+@keyframes walk_child{
+0% {transform: translate(0);}
+50% {transform: translate(2px,5px);}
+}

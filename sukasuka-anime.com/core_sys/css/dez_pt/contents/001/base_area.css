@@ -1,0 +1,47 @@
+body{
+background:url(../../../../images/main/top/paper.jpg);
+}
+#wrapper{
+min-width:1200px;
+overflow: hidden;
+}
+
+#main {
+  margin: 0 auto;
+  padding: 0 0 50px;
+  text-align: left;
+  min-height: 600px;
+  position:relative;
+  background: url(../../../../images/main/top/frame_line.jpg) repeat-x top, /* 飾りライン */
+  url(../../../../images/main/top/frame_line.jpg) repeat-x bottom, /* 飾りライン */
+  linear-gradient(to bottom, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 100%);  /* 半透明白 */
+}
+
+#main::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -31px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 45px;
+  width: 100%;
+  background: url(../../../../images/main/top/frame3.png) no-repeat center;
+}
+
+#main::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  bottom: -18px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: url(../../../../images/main/top/frame2.png) no-repeat center;
+  height: 29px;
+  width: 100%;
+}
+
+#footer{
+}

@@ -1,0 +1,17 @@
+/* バナーユニットC01指定
+---------------------------------------------*/
+/* エリア指定 */
+#bnu_001_c {
+text-align:center;
+display:none;
+}
+
+.cate_about #bnu_001_c {
+display:block;
+}
+
+/* バナー間隔 */
+#bnu_001_c p {
+margin: 0px 0px 5px 0px;
+padding: 0px;
+}

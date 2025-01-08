@@ -1,0 +1,49 @@
+.main_sa03 {
+  background:url(../../../../images/main/top/frame_line.jpg) repeat-x top,
+    url(../../../../images/main/top/frame_line.jpg) repeat-x bottom,
+    url(../../../../images/main/top/paper.jpg);
+  padding: 34px 0;
+  position:relative;
+}
+
+.main_sa03::before {
+  transform:rotate(180deg);
+  content:"";
+  position:absolute;
+  margin:auto;
+  top: -12px;
+  left:0;
+  ight:0;
+  z-index:5;
+  background:url(../../../../images/main/top/frame2.png) no-repeat center;
+  height: 18px;
+  width: 100%;
+}
+
+.main_sa03::after {
+  content:"";
+  position:absolute;
+  margin:auto;
+  bottom: -12px;
+  left:0;
+  right:0;
+  z-index:5;
+  background:url(../../../../images/main/top/frame2.png) no-repeat center;
+  height: 18px;
+  width: 100%;
+  display:block;
+}
+
+.bddvd_tokuten {
+
+}
+
+.bddvd_tokuten>dt {
+  margin-top:0.5em;
+  font-weight: 600;
+}
+
+.bddvd_tokuten>dd {
+  font-size: 15px;
+  margin-left: 51px;
+}

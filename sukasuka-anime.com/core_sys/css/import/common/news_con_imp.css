@@ -1,0 +1,8 @@
+/* news_blockシステム指定＜news_block＞ */
+@import url("../../ptu/news_block.css");
+@import url("../../news_block/contents/common.css");
+@import url("../../news_block/contents/wdt.css");
+@import url("../../news_block/contents/tp3_mgn.css");
+@import url("../../common/news_width.css");
+@import url("../../news_block/edit/font_edit.css");
+

@@ -1,0 +1,192 @@
+body{
+background:url(../../../../images/main/top/paper.jpg);
+}
+#wrapper{
+min-width:1200px;
+overflow: hidden;
+}
+
+#main {
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: left;
+  min-height: 600px;
+  position:relative;
+  background: url(../../../../images/main/top/frame_line.jpg) repeat-x top, /* 飾りライン */
+  url(../../../../images/main/top/frame_line.jpg) repeat-x bottom, /* 飾りライン */
+  linear-gradient(to bottom, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 100%);  /* 半透明白 */
+}
+
+#main::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -31px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 45px;
+  width: 100%;
+  background: url(../../../../images/main/top/frame3.png) no-repeat center;
+}
+
+#main::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  bottom: -18px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: url(../../../../images/main/top/frame2.png) no-repeat center;
+  height: 29px;
+  width: 100%;
+}
+
+#footer{
+}
+.read {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between
+}
+
+.sceneArea {
+  width: 620px;
+  height: 350px;
+  padding: 0px;
+  position: relative;
+  z-index: 200;
+  margin: 50px 40px 25px 0;
+}
+
+.sceneArea img {
+  width: 100%;
+  top:0;
+  left:0;
+}
+
+.story_desc{
+  flex-basis: 490px;
+  flex-shrink: 3;
+  text-align: left;
+  min-height: 450px;
+  margin: 50px 0 0;
+}
+
+.story_desc span{
+  white-space:nowrap;
+}
+
+.img_u{
+  display: flex;
+  justify-content:space-between;
+  width:620px;
+  position: absolute;
+  top: 430px;
+  left: 0;
+}
+
+.img_u .ph{
+  width:120px;
+}
+
+.img_u .ph img{
+  width:100%;
+}
+
+#cms_block>div[class^="page_"]:not(".page_4"){
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#cms_block{
+  width:1150px;
+  margin:0 auto;
+}
+
+.cap_no{
+  display:none;
+}
+
+div.read{
+display:flex;
+}
+
+.page_4 div.read{
+display:block;
+}
+
+.gallery_link img{
+transition:0.5s;
+filter: sepia(0) !important;
+}
+
+.gallery_link_off img{
+  filter: sepia(1) !important;
+}
+
+.gallery_link:hover img{
+  filter: sepia(0) brightness(1.2) !important;
+}
+
+.sceneArea{
+  border: 2px solid #483b17;
+}
+
+.sceneArea::before,
+.sceneArea::after{
+  content: "";
+  height: 20px;
+  width: 58px;
+  position: absolute;
+  background: url(../../../../images/main/chara/decoration_side.png) no-repeat left top;
+  z-index: 50;
+  top: -20px;
+}
+
+.sceneArea::before{
+    left:0;
+}
+
+.sceneArea::after{
+    right:0;
+    transform:scale(-1,1)
+}
+
+.gallery_link img{
+    border: 2px solid #483b17;
+
+}
+
+.gallery_link{
+    position:relative;
+    display:block
+}
+
+.gallery_link::before{
+  content: "";
+  height: 20px;
+  width: 100%;
+  position: absolute;
+  background: url(../../../../images/main/decoration/decoration_under.png) no-repeat center top/contain;
+  z-index: 50;
+  top: -20px;
+  transform:scale(1,-1)
+}
+
+.cate_story .atl_inner {
+  overflow: visible;
+  position: relative;
+}
+
+.ti_h2{
+font-size: 26px;
+}
+
+.ti_h3{
+font-size: 30px;
+margin: 0;
+text-align: center;
+}

@@ -1,0 +1,23 @@
+.holy_bg,
+.holy_close{
+position: fixed;
+z-index: 499;
+display:none;
+top:0;
+right:0;
+bottom:0;
+left:0;
+}
+
+.holy_bg{
+background:rgba(241, 231, 201, 0.7);
+  cursor: pointer;
+}
+
+.holy_close{
+  background: url(../../images/main/cont/close.png) no-repeat top right;
+  width: 785px;
+  height: 551px;
+  margin: auto;
+  cursor: pointer;
+}

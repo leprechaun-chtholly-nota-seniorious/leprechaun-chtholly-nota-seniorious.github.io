@@ -1,0 +1,143 @@
+.play_movie {
+  position: absolute;
+  top: 855px;
+  left: -30px;
+  z-index: 40;
+  width: 100%;
+  text-align: right;
+  min-width: 1100px;
+  pointer-events: none;
+  animation: fadein 2s ease 4s 1 both;
+}
+
+.play_movie a{
+  pointer-events:auto;
+  position:relative;
+  display: inline-block;
+}
+
+@media screen and (max-device-width:600px){
+  .play_movie {
+  top: 1050px;
+  }
+}
+
+
+.ticket_bn {
+  position: absolute;
+  top: 886px;
+  left: 400px;
+  z-index: 40;
+  pointer-events: none;
+  animation: fadein 2s ease 4s 1 both;
+}
+
+.ticket_bn a{
+  pointer-events:auto;
+  position:relative;
+  display: inline-block;
+}
+
+@media screen and (max-width:1200px){
+  .ticket_bn {
+    /* left: 480px; */
+  }
+}
+
+@media screen and (max-device-width:600px){
+  .ticket_bn {
+  top: 1082px;
+  }
+}
+
+/*
+.play_movie a:hover::before{
+pointer-events: none;
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: url(../../../core_sys/images/main/top/play_movie.gif) center/100%;
+  z-index: 100;
+  height: 187px;
+  filter: brightness(1.5);
+  width: 278px;
+  bottom: 0;
+  opacity: 0.5;
+  mix-blend-mode: lighten;
+}
+*/
+
+/* ====================
+Play Movie
+==================== */
+#layer {
+  width: 80%;
+  text-align: right;
+}
+
+#op_area{
+  display:none;
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:10000;
+  top:0px;
+  left:0px;
+  bottom:0;
+  right:0;
+  margin:auto;
+}
+
+#op_area_bg{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:0;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  right: 0;
+  bottom: 0;
+}
+
+#op_area_bg a{
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+#op_area_inner{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#op_movie_wrap{
+  position: relative;
+  width: 80%;
+  padding: 45% 0 0 0;
+}
+
+#op_movie_area{
+  box-shadow: 0px 0px 10px #000;
+  height:100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#skip_bt{}

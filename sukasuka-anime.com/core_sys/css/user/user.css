@@ -1,0 +1,82 @@
+/* ユーザー定義CSS
+---------------------------------------------*/
+/*フォントサイズ*/
+.fs110{
+font-size:110%;
+}
+
+
+.ti_wrapper {
+  display: inline-block;
+}
+
+#js_newsdate{
+color:#e62e8b;
+font-weight:600;
+text-align: left;
+}
+
+/* タイトル指定 */
+.ti_h3 {
+margin-top:1.5em;
+font-size: 24px;
+text-align: left;
+}
+
+.ti_h4 {
+margin-top:1.5em;
+font-size: 20px;
+text-align: left;
+}
+
+/* 小見出し(h5) */
+.ti_h5 {
+margin-top:1.5em;
+text-align: left;
+}
+
+p.h_no {
+margin: 0;
+padding: 0;
+}
+
+/* ========================================
+header
+======================================== */
+/* ===== 大見出し 飾り付き ===== */
+.ti_deco{
+  text-align:center;
+  position:relative;
+  font-size:26px;
+  display: inline-block;
+  margin: 50px auto 30px;
+//  font-family: 'Elsie Swash Caps' , 'Elsie', 'Yu Gothic', YuGothic, sans-serif;
+}
+
+.ti_deco::before,
+.ti_deco::after{
+    content: "";
+    height: 20px;
+    width: 58px;
+    position: absolute;
+    background: url(../../images/main/chara/decoration_side.png) no-repeat left top;
+    z-index: 5;
+    bottom: 0;
+    top: 5px;
+}
+
+.ti_deco::before{
+    left: -100px;
+}
+
+.ti_deco::after{
+    right: -100px;
+    transform: scale(-1, 1);
+}
+
+/* ========================================
+フロート対策無効
+======================================== */
+#contents,#contents_main,#ext_area_01,#ext_area_02,.header_sa01,.header_sa02,.header_sa03,.header_sa04,.main_sa01,.main_sa02,.main_sa03,.main_sa04,.main_sa05,.main_sa06,.main_sa07,.main_sa08,.footer_sa01,.footer_sa02,.footer_sa03,.ti_b,#news_ct_h{min-height: 0;}
+
+#contents:after,#contents_main:after,#ext_area_01:after,#ext_area_02:after,.header_sa01:after,.header_sa02:after,.header_sa03:after,.header_sa04:after,.main_sa01:after,.main_sa02:after,.main_sa03:after,.main_sa04:after,.main_sa05:after,.main_sa06:after,.main_sa07:after,.main_sa08:after,.footer_sa01:after,.footer_sa02:after,.footer_sa03:after,.ti_b:after,#news_ct_h:after {content: none;display: none;clear: none;height: auto;overflow: visiable;}

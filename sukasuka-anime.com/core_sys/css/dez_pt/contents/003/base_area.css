@@ -1,0 +1,146 @@
+body{
+background:url(../../../../images/main/top/paper.jpg);
+}
+#wrapper{
+min-width:1200px;
+overflow: hidden;
+}
+
+#main {
+  margin: 0 auto;
+  padding: 0 0 50px;
+  text-align: left;
+  min-height: 600px;
+  position:relative;
+  background: url(../../../../images/main/top/frame_line.jpg) repeat-x top, /* 飾りライン */
+  url(../../../../images/main/top/frame_line.jpg) repeat-x bottom, /* 飾りライン */
+  linear-gradient(to bottom, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 100%);  /* 半透明白 */
+}
+
+#main::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -31px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 45px;
+  width: 100%;
+  background: url(../../../../images/main/top/frame3.png) no-repeat center;
+}
+
+#main::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  bottom: -18px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: url(../../../../images/main/top/frame2.png) no-repeat center;
+  height: 29px;
+  width: 100%;
+}
+
+#footer{
+}
+
+.cate_character #cms_block>div[class^="page_"]{
+position:relative;
+}
+
+.holy_sword_wrap{
+
+}
+
+.cate_character #cms_block .block.line_03{
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 200px;
+  height: 190px;
+  text-align: center;
+  border: 1px solid;
+  font-family: 'Elsie Swash Caps', 'Elsie', cursive;
+  border-style: solid;
+  border-width: 43px 40px;
+  -moz-border-image: url(../../../../images/main/decoration/border_image.png) 43 40 repeat;
+  -webkit-border-image: url(../../../../images/main/decoration/border_image.png) 43 40 repeat;
+  -o-border-image: url(../../../../images/main/decoration/border_image.png) 43 40 repeat;
+  border-image: url(../../../../images/main/decoration/border_image.png) 43 40 repeat;
+  cursor:pointer;
+}
+
+.cate_character #cms_block .block.line_03 img {
+  position: absolute;
+  top: -4px;
+  right: -30px;
+}
+
+.cate_character #cms_block .block.line_03:hover p{
+color:#e62e8b;
+transition:0.5s;
+}
+
+.cate_character #cms_block .block.line_03:hover{
+  background: rgba(255, 245, 213, 0.5);
+  border-radius: 20px;
+  transition:0.5s;
+}
+
+.holy_sword_wrap>p:first-child {
+  position: absolute;
+  width: 200px;
+  font-size: 24px;
+  top: -28px;
+  margin: 0;
+  right: -40px;
+}
+
+.holy_sword_wrap>p:last-child {
+  position: absolute;
+  width: 200px;
+  top: 94px;
+  right: -40px;
+  font-size: 19px;
+}
+
+.cate_character #cms_block .block.line_04{
+  position: fixed;
+  width: 785px;
+  background: #f1e7c9;
+  filter:drop-shadow(0 0 1px #000);
+  border-radius:10px;
+  z-index: 500;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 350px;
+  border-style: solid;
+  border-width: 43px 40px;
+  -moz-border-image: url(../../../../images/main/decoration/border_image.png) 43 40 repeat;
+  -webkit-border-image: url(../../../../images/main/decoration/border_image.png) 43 40 repeat;
+  -o-border-image: url(../../../../images/main/decoration/border_image.png) 43 40 repeat;
+  border-image: url(../../../../images/main/decoration/border_image.png) 43 40 repeat;
+  display:none;
+}
+
+.cate_character #cms_block .block.line_04 .atl_inner{
+  display:flex;
+}
+
+.holy_sword_details{
+  text-align:left !important;
+}
+
+.cate_character #cms_block .block.line_04 h3{
+  margin:-30px 0 10px 0;
+  font-size:34px;
+}
+
+.cate_character .atl_inner{
+overflow:visible;
+}

@@ -1,0 +1,707 @@
+.block_inner{
+  text-align:center;
+}
+
+.block_border {
+  margin: auto;
+  border: 1px solid #949293;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+#cms_block>div[class^="page_"]{
+  width: 860px;
+  margin: 0 auto;
+}
+
+.js-basis49{
+display:none;
+}
+
+.cate_bottom_tag{
+text-align:center;
+}
+
+.sc a{
+  font-family: 'Elsie Swash Caps' , 'Elsie', 'Yu Gothic', YuGothic, sans-serif;
+  font-size:22px;
+  text-decoration:none;
+}
+
+/* ====================
+Staff/Cast
+==================== */
+
+.cate_staffcast #cms_block>div[class^="page_"]{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  width: 1200px;
+}
+
+.cate_staffcast #cms_block div.block {
+  flex-basis: 49%;
+  padding: 0 20px;
+  margin: 0 0 60px;
+}
+
+.decoration_frame{
+  border-style: solid;
+  border-width: 43px 40px;
+  -moz-border-image: url(../../images/main/decoration/border_image.png) 43 40 repeat;
+  -webkit-border-image: url(../../images/main/decoration/border_image.png) 43 40 repeat;
+  -o-border-image: url(../../images/main/decoration/border_image.png) 43 40 repeat;
+  border-image: url(../../images/main/decoration/border_image.png) 43 40 fill repeat;
+}
+
+.staffcast_list{
+  display:flex;
+  flex-wrap:wrap;
+  width: 110%;
+  position: relative;
+  left: -5%;
+}
+
+.staffcast_list dt{
+  flex-basis:40%;
+  padding:13px 18px 13px 0;
+  font-weight:600;
+  text-align:right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px dotted #8a94a0;
+}
+
+.staffcast_list--cast dt{
+    flex-basis:60%;
+}
+
+.staffcast_list dd{
+  flex-basis:60%;
+  text-align:left;
+  padding:13px 0;
+  margin:0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px dotted #8a94a0;
+}
+
+.staffcast_list--cast dd{
+  flex-basis:40%;
+}
+
+
+/* ====================
+Music
+==================== */
+
+.cate_music #cms_block>div[class^="page_"]{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+.cate_music #cms_block div.block {
+  flex-basis:100%;
+  padding: 0;
+  margin: 0 0 40px;
+  text-align:center !important;
+}
+
+.cate_music #cms_block div.block.basis49{
+  flex-basis: 49%;
+  padding: 0 30px;
+  margin:0 0 40px !important;
+}
+
+.cate_music #cms_block div.block.basis49 div{
+  text-align:left !important;
+}
+
+.cate_music #cms_block div.block div{
+  width:100% !important;
+  margin:0 !important;
+}
+
+.cate_music #cms_block div.block.basis100 div{
+  text-align:center;
+}
+
+.cate_music #cms_block div.block .ph{
+  margin-bottom:20px !important;
+}
+
+.cate_music #cms_block div.block img{
+//  width:100%;
+  max-width:100% !important;
+}
+
+.cd_version{
+  color:#f30a73;
+  font-weight:600;
+}
+
+.cd_song_list{
+  font-size:14px;
+}
+
+.cd_song_list dd{
+  margin:0 0 14px 14px;
+}
+
+.music_title_area{
+//padding-bottom:50px;
+}
+
+.music_title_area p{
+  margin:0;
+}
+
+.music_artist{
+  font-size:30px;
+  font-weight:600;
+}
+
+.music_title{
+  font-size:36px;
+  font-weight:900;
+}
+
+.music_release{
+  font-size:24px;
+  color:#f30a73;
+  font-weight:600;
+}
+
+.music_sell{
+  font-weight:600;
+}
+
+.music_navigation{
+  width: 1000px;
+  margin: auto !important;
+  display: flex;
+  justify-content: space-around;
+  overflow: visible !important;
+  font-family: 'Elsie Swash Caps' , 'Elsie', 'Yu Gothic', YuGothic, sans-serif;
+  font-size: 30px;
+  flex-wrap:wrap;
+}
+
+.music_navigation>li{
+  padding:0 5px;
+  position:relative;
+  text-align:center;
+  margin:5px 0;
+  min-height: 50px;
+  min-width: 128px;
+}
+
+.music_navigation a{
+  text-decoration:none;
+  font-weight:600;
+}
+
+.music_navigation>li::after{
+  content:"";
+  position:absolute;
+  bottom: -35px;
+  left:0;
+  right:0;
+  margin: 0 auto;
+  width:100%;
+  height: 33px;
+  background:url(../../images/main/decoration/decoration_under.png) no-repeat center/contain;
+  transition:0.5s;
+}
+
+.music_navigation>li:hover a{
+  color:#e62e8b;
+}
+
+
+/* ====================
+On Air
+==================== */
+
+.onair_list{
+  display:flex;
+  flex-wrap:wrap;
+  text-align: left;
+}
+
+.onair_list dt:not(:nth-last-child(2)),
+.onair_list dd:not(:nth-last-child(1)){
+  border-bottom: 1px dashed rgba(0,0,0,.2);
+}
+
+.onair_list dt{
+  font-size:20px;
+  font-weight:600;
+  padding: 7px 0 5px;
+  flex-basis: 30%;
+}
+
+.onair_list dd{
+  font-size:18px;
+  flex-basis: 70%;
+  margin: 0;
+  padding: 9px 0 5px;
+}
+
+.onair_list dd>onair_list--small{
+  font-size:14px;
+}
+
+.onair_web_list{
+  font-size:20px;
+  font-weight:600;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+
+.onair_web_list>li{
+  flex-basis: 30%;
+  border-bottom: 1px dashed rgba(0,0,0,.2);
+  padding:14px 0;
+  line-height:1.2;
+  display:flex;
+  align-items:flex-end;
+}
+
+.onair_web_list>li span{
+  font-size:14px;
+}
+
+/* ====================
+Story
+==================== */
+.cate_story #cms_block>div[class^="page_"]{
+  width: 100%;
+}
+
+.cate_story .ti_deco{
+  font-family: 'Elsie Swash Caps' , 'Elsie', 'Yu Gothic', YuGothic, sans-serif;
+}
+
+.intro_catch {
+  font-size: 30px;
+  font-weight: bold;
+  font-feature-settings: 'palt';
+  letter-spacing: 0.1em;
+}
+
+.intro_text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 44px;
+  font-feature-settings: 'palt';
+  letter-spacing: 0.1em;
+}
+
+.intro_text span {
+  font-size:22px;
+  color:#f30a73;
+}
+
+.story_separate_img {
+  position: relative;
+  height:310px;
+  background: url(../../images/main/top/main_bg.jpg) center 40%/cover no-repeat;
+  margin: 50px 0;
+  pointer-events: none;
+}
+
+.story_separate_img img{
+  position: absolute;
+  bottom: 0;
+  left:650px;
+  right:0;
+  margin:auto;
+  pointer-events: none;
+}
+
+.cate_story .atl_inner{
+overflow: visible;
+}
+
+/* ====================
+About
+==================== */
+
+.cate_about #cms_block>div[class^="page_"]{
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
+}
+
+.cate_about #cms_block div.block {
+  flex-basis: 19%;
+  padding: 0 15px;
+  margin: 0 0 60px;
+}
+
+/* ===== 見出し　原作情報  ===== */
+.cate_about #cms_block div.block.line_00{
+  flex-basis:100%;
+  padding:0;
+  margin:0 !important;
+  text-align:center !important;
+}
+
+.cate_about #cms_block div.block div{
+  width:100% !important;
+  text-align:left;
+  margin:0 !important;
+}
+
+.cate_about #cms_block div.block.line_00 div{
+  text-align:center;
+}
+
+.cate_about #cms_block div.block .ph{
+  margin-bottom:20px !important;
+}
+
+.cate_about #cms_block div.block img{
+  width:100%;
+  max-width:100% !important;
+}
+
+/* ====================
+Character 
+==================== */
+
+.chara_title{
+width:400px;
+font-feature-settings:'palt';
+}
+
+/* ===== キャラ名　英 ===== */
+.chara_title__en{
+  font-family: 'Elsie Swash Caps', 'Elsie', cursive;
+  font-size:19px;
+  margin:0;
+  text-align:center;
+  position:relative;
+}
+
+.chara_title__en::before,
+.chara_title__en::after{
+  content: "";
+  height: 20px;
+  width: 58px;
+  position: absolute;
+  background: url(../../images/main/chara/decoration_side.png) no-repeat left top;
+  z-index: 5;
+}
+
+.chara_title__en::before{
+  top:0;
+  left:0;
+}
+
+.chara_title__en::after{
+  top:0;
+  right:0;
+  transform: scale(-1, 1);
+}
+
+/* ===== キャラ名　日本 ===== */
+.chara_title__jp{
+  font-size:34px;
+  font-weight:600;
+  margin:0;
+  text-align:center;
+  letter-spacing:0.1em;
+  white-space: pre;
+  overflow: visible !important;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== CV ===== */
+.chara_title__cv{
+  font-size:24px;
+  margin:0;
+  text-align:right;
+}
+
+.chara_title__cv>span{
+  font-family: 'Elsie Swash Caps', 'Elsie', cursive;
+  font-size:29px;
+}
+
+/* =====  詳細項目 ===== */
+
+.chara_detail_wrap{
+  position:relative;
+  width:400px;
+}
+
+.chara_detail{
+  font-feature-settings:'palt';
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.chara_detail>dt{
+  font-family: 'Elsie Swash Caps', 'Elsie', cursive;
+  font-size:20px;
+  flex-basis:30%;
+  text-align:right;
+  padding: 0 5px 0 0;
+  position: relative;
+  top: -0.15em;
+}
+
+.chara_detail>dd{
+  font-size:16px;
+  flex-basis:56%;
+  margin:0;
+  text-align:left;
+}
+
+/* 飾り枠 コーナー */
+.chara_detail_wrap::before,
+.chara_detail_wrap::after,
+.chara_detail::before,
+.chara_detail::after{
+  content:"";
+  height:50px;
+  width:50px;
+  position:absolute;
+  background: url(../../images/main/top/corner.png) no-repeat left top;
+  z-index:5;
+}
+
+/* 飾り枠 左上 */
+.chara_detail_wrap::before {
+  top:0;
+  left:0;
+}
+
+/* 飾り枠 右上 */
+.chara_detail_wrap::after {
+  top:0;
+  right:0;
+  transform:rotate(90deg);
+}
+
+/* 飾り枠 左下 */
+.chara_detail::before {
+  bottom:0;
+  left:0;
+  transform:rotate(-90deg);
+}
+
+/* 飾り枠 右下 */
+.chara_detail::after {
+  bottom:0;
+  right:0;
+  transform:rotate(180deg);
+}
+
+.cate_character #cms_block>div[class^="page_"]{
+  width: 1100px;
+  display: flex;
+  padding: 0px 150px 0 150px;
+}
+
+.cate_character #cms_block>div[class^="page_"]>div.block.line_02{
+margin:0 auto;
+}
+
+.chara_pagenation{
+  position:absolute;
+  margin: auto !important;
+  top: 460px;
+  display:flex;
+  justify-content:space-between;
+  width: 1150px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.chara_pagenation__next{
+  transform:rotate(180deg);
+}
+
+
+/* ====================
+Blu-ray/DVD
+==================== */
+.cate_bluraydvd .read{
+  text-align:left !important;
+}
+
+.cate_bluraydvd .block_border{
+  padding:20px 50px;
+}
+
+.bddvd_subhead{
+  font-size:18px;
+  margin-top:0;
+  position:relative;
+}
+
+.bddvd_subhead::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-30px;
+  width:30px;
+  height:36px;
+  background: url(../../images/main/decoration/heading_decoration.png) no-repeat left top;
+}
+
+.bddvd_limited{
+  display:inline-block;
+  background: #e62e8b;
+  font-size:16px;
+  vertical-align: text-top;
+  margin:0 0 0 10px;
+  padding:3px 10px 0;
+  color:#fff;
+}
+
+.bddvd_date{
+  color:#e62e8b;
+  font-size:24px;
+  margin:0;
+  font-weight:600;
+}
+
+.oritoku_list {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+}
+
+.oritoku_list p{
+  margin:0.5em 0;
+}
+
+.oritoku_list li{
+  flex-basis:48%;
+  border:1px solid;
+  border-radius:10px;
+  margin:1%;
+  padding:10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.oritoku_store {
+  background-color:rgba(196, 174, 105, 0.5);
+  border-radius:8px;
+  font-weight:600;
+  text-align:center;
+  transition:0.5s;
+}
+
+.oritoku_store>a{
+  display:flex;
+  padding:0.5em;
+  text-decoration:none;
+  background-image:url(../../images/main/cont/window.png);
+  background-repeat:no-repeat;
+  background-position:right 10px center ;
+  height: 90px;
+  justify-content: center;
+  align-items: center;
+}
+
+.oritoku_store:hover {
+  background-color:#f30a73;
+}
+
+.oritoku_store:hover a{
+  color:#fff;
+}
+
+.oritoku_store--nolink{
+  padding:0.5em;
+}
+
+.oritoku_store--nolink:hover {
+  background-color:rgba(196, 174, 105, 0.5);
+}
+
+.oritoku_img {
+  text-align: center;
+  max-width: 250px;
+  margin: auto !important;
+}
+
+.oritoku_img--landscape {
+  max-width: 350px;
+}
+
+.oritoku_img img{
+max-width:100%;
+}
+
+.oritoku_title{
+  font-weight:600;
+  color:#f30a73;
+  margin-top: auto;
+}
+
+.events_none{
+  pointer-events: none;
+}
+
+/* ====================
+Special
+==================== */
+.cate_special .atl_inner{
+  overflow:visible;
+}
+
+.iframe_decoration{
+  border: 2px solid;
+  position:relative;
+  max-width:800px;
+  margin:0 auto;
+}
+
+.cate_music #cms_block div.block div.iframe_decoration{
+  margin:0 auto !important;
+}
+
+.cate_music .atl_inner {
+  overflow: visible;
+}
+
+.iframe_decoration iframe{
+  width:100%;
+  vertical-align:top;
+}
+
+.iframe_decoration::before,
+.iframe_decoration::after{
+  content: "";
+  height: 20px;
+  width: 58px;
+  position: absolute;
+  background: url(../../images/main/chara/decoration_side.png) no-repeat left top;
+  z-index: 50;
+  top: -20px;
+}
+
+.iframe_decoration::before{
+    left:0;
+}
+
+.iframe_decoration::after{
+    right:0;
+    transform:scale(-1,1)
+}
+

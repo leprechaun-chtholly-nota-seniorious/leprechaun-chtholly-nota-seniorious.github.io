@@ -1,0 +1,21 @@
+#pagetop_bt {
+  position:fixed;
+  right:0;
+  bottom:50px;
+  z-index:80;
+  transition:1s;
+}
+
+#pagetop_bt.dropdown{
+  bottom:-200px;
+//animation:dropdown 1s ease 0s 1 both;
+}
+
+@keyframes dropdown{
+0%{
+  bottom:50px;
+}
+100%{
+  bottom:-200px;
+}
+}

@@ -1,0 +1,131 @@
+body{
+background:url(../../../../images/main/top/paper.jpg);
+}
+#wrapper{
+min-width:1200px;
+overflow: hidden;
+}
+
+#main {
+  margin: 0 auto;
+  padding: 0 0 50px;
+  text-align: left;
+  min-height: 600px;
+  position:relative;
+  background: url(../../../../images/main/top/frame_line.jpg) repeat-x top, /* 飾りライン */
+  url(../../../../images/main/top/frame_line.jpg) repeat-x bottom, /* 飾りライン */
+  linear-gradient(to bottom, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 100%);  /* 半透明白 */
+}
+
+#main::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -31px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 45px;
+  width: 100%;
+  background: url(../../../../images/main/top/frame3.png) no-repeat center;
+}
+
+#main::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  bottom: -18px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: url(../../../../images/main/top/frame2.png) no-repeat center;
+  height: 29px;
+  width: 100%;
+}
+
+#footer{
+}
+
+/* ====================
+Goods
+==================== */
+
+#cms_block{
+    width:1180px;
+    padding:50px 0 0;
+    margin:auto;
+}
+#list_06 {
+    display: flex;
+    margin-bottom:50px;
+    flex-wrap: wrap;
+}
+
+.nwu_box {
+    flex-basis:252px;
+    margin-bottom:50px;
+}
+
+.nwu_box:not(:nth-child(4n)) {
+    margin-right: 54px;
+}
+
+#list_06 .sm {
+    border:1px solid;
+      text-align:center;
+
+}
+
+.atl_inner>div {
+      width:100%;
+}
+
+.atl_inner div{
+      text-align:left;
+}
+
+.atl_inner .ph {
+      text-align:center;
+}
+
+
+#list_06 .title {
+    font-weight:bold;
+    text-decoration:none;
+    position:relative;
+  margin: 20px 0 0;
+
+}
+
+#list_06 .title a{
+    text-decoration:none;
+    position:relative;
+}
+
+#list_06 .title a::after {
+    content:"More 〉";
+    display:inline-block;
+    text-align:center;
+    font-family: 'Elsie Swash Caps' , 'Elsie', 'Yu Gothic', YuGothic, sans-serif;
+    margin: 0.6em 0 0 0;
+    width: 100%;
+}
+
+#list_06 .title::before,
+#list_06 .title::after {
+    content:"";
+    width:40px;
+    height:20px;
+    background: url(../../../../images/main/chara/decoration_side.png) no-repeat left top/contain;
+    position:absolute;
+    bottom: 2px;
+}
+
+#list_06 .title::before {
+    left:0;
+}
+
+#list_06 .title::after {
+    right: 0;
+    transform: scaleX(-1);
+}

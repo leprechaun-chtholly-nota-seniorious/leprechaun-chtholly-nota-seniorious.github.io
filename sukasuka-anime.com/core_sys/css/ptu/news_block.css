@@ -1,0 +1,25 @@
+#news_block>div[class^="page_"]{
+  width: 800px;
+  margin: 0 auto;
+}
+
+.back_news_list {
+  text-align:center;
+}
+
+.back_news_list a{
+  font-family: 'Elsie Swash Caps' , 'Elsie', 'Yu Gothic', YuGothic, sans-serif;
+  text-decoration:none;
+  font-size:26px;
+  font-weight:600;
+  padding:0 0 0 25px;
+  background:url(../../images/main/chara/arrow.png) no-repeat center left/12px;
+}
+
+#news_block div.block {
+  text-align: center;
+}
+
+.atl_inner {
+  text-align: left;
+}

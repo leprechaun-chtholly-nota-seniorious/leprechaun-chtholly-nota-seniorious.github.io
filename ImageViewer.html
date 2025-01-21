@@ -28,7 +28,6 @@
 				const title = "Image Viewer";
 				const srcList = [];
 				let index = -1;
-				document.title = title + " (0/0)";
 				document.body.addEventListener("dragenter", (e) => {
 					e.stopPropagation();
 					e.preventDefault();
@@ -42,22 +41,25 @@
 					e.preventDefault();
 					srcList.length = 0;
 					index = -1;
-					document.title = title + " (0/0)";
+					document.title = title;
 					img.src = "";
 					for (let file of e.dataTransfer.files)
 						if (file.type.startsWith("image/")) {
 							const reader = new FileReader();
-							reader.index = srcList.length ++;
+							reader.index = srcList.length;
+							srcList.push({
+								name: file.name
+							});
 							reader.onload = (e) => {
-								srcList[reader.index] = e.target.result;
+								srcList[reader.index].src = e.target.result;
 								if (index === reader.index)
-									img.src = srcList[index];
+									img.src = srcList[index].src;
 							};
 							reader.readAsDataURL(file);
 						}
 					if (0 !== srcList.length) {
 						index = 0;
-						document.title = title + " (1/" + srcList.length + ")";
+						document.title = srcList[index].name + " (" + (index + 1) + "/" + srcList.length + ")";
 					}
 				}, false);
 				document.body.addEventListener("keydown", (e) => {
@@ -95,8 +97,8 @@
 						index = 0;
 					else if (srcList.length <= index)
 						index = srcList.length - 1;
-					img.src = srcList[index];
-					document.title = title + " (" + (index + 1) + "/" + srcList.length + ")";
+					img.src = srcList[index].src;
+					document.title = srcList[index].name + " (" + (index + 1) + "/" + srcList.length + ")";
 				}, false);
 			})();
 		</script>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Image Viewer</title>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+	</head>
+	<body>
+		<script>
+			(function() {
+				Object.assign(document.documentElement.style, {
+					height: "100%"
+				});
+				Object.assign(document.body.style, {
+					backgroundColor: 'black',
+					margin: 0,
+					height: "100%",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center"
+				});
+				const img = document.createElement("img");
+				Object.assign(img.style, {
+					maxWidth: "100%",
+					maxHeight: "100%"
+				});
+				document.body.appendChild(img);
+				const title = "Image Viewer";
+				const srcList = [];
+				let index = -1;
+				document.title = title + " (0/0)";
+				document.body.addEventListener("dragenter", (e) => {
+					e.stopPropagation();
+					e.preventDefault();
+				}, false);
+				document.body.addEventListener("dragover", (e) => {
+					e.stopPropagation();
+					e.preventDefault();
+				}, false);
+				document.body.addEventListener("drop", (e) => {
+					e.stopPropagation();
+					e.preventDefault();
+					srcList.length = 0;
+					index = -1;
+					document.title = title + " (0/0)";
+					img.src = "";
+					for (let file of e.dataTransfer.files)
+						if (file.type.startsWith("image/")) {
+							const reader = new FileReader();
+							reader.index = srcList.length ++;
+							reader.onload = (e) => {
+								srcList[reader.index] = e.target.result;
+								if (index === reader.index)
+									img.src = srcList[index];
+							};
+							reader.readAsDataURL(file);
+						}
+					if (0 !== srcList.length) {
+						index = 0;
+						document.title = title + " (1/" + srcList.length + ")";
+					}
+				}, false);
+				document.body.addEventListener("keydown", (e) => {
+					if (-1 === index)
+						return;
+					switch (e.code) {
+					case "ArrowLeft":
+					case "ArrowUp":
+					case "KeyA":
+					case "KeyW":
+						index --;
+						break;
+					case "ArrowRight":
+					case "ArrowDown":
+					case "KeyD":
+					case "KeyS":
+						index ++;
+						break;
+					case "Home":
+						index = 0;
+						break;
+					case "End":
+						index = srcList.length - 1;
+						break;
+					case "PageUp":
+						index -= 10;
+						break;
+					case "PageDown":
+						index += 10;
+						break;
+					default:
+						return;
+					}
+					if (0 > index)
+						index = 0;
+					else if (srcList.length <= index)
+						index = srcList.length - 1;
+					img.src = srcList[index];
+					document.title = title + " (" + (index + 1) + "/" + srcList.length + ")";
+				}, false);
+			})();
+		</script>
+	</body>
+</html>

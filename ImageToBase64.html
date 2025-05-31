@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-2JDTM1R9SQ"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-2JDTM1R9SQ');
+		</script>
+		<title>Image To Base64</title>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+	</head>
+	<body>
+		<script>
+			(function() {
+				Object.assign(document.documentElement.style, {
+					height: "100%"
+				});
+				Object.assign(document.body.style, {
+					color: 'white',
+					backgroundColor: 'black',
+					margin: 0,
+					height: "100%",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center"
+				});
+				const table = document.createElement("table");
+				document.body.appendChild(table);
+				Object.assign(table.style, {
+					width: "100%",
+					height: "100%"
+				});
+				const tr1 = document.createElement("tr");
+				table.appendChild(tr1);
+				Object.assign(tr1.style, {
+					height: "2%"
+				});
+				const tr2 = document.createElement("tr");
+				table.appendChild(tr2);
+				Object.assign(tr2.style, {
+					height: "98%"
+				});
+				const checkboxs = document.createElement("td");
+				tr1.appendChild(checkboxs);
+				const textareas = document.createElement("td");
+				tr2.appendChild(textareas);
+				const fileName = document.createElement("input");
+				checkboxs.appendChild(fileName);
+				fileName.type = "checkbox";
+				checkboxs.appendChild(document.createTextNode("fileName"));
+				const backgroundImage = document.createElement("input");
+				checkboxs.appendChild(backgroundImage);
+				backgroundImage.type = "checkbox";
+				checkboxs.appendChild(document.createTextNode("backgroundImage ． indent "));
+				const indentCount = document.createElement("input");
+				checkboxs.appendChild(indentCount);
+				indentCount.style.width = "30px";
+				Object.assign(indentCount, {
+					type: "number",
+					min: 0,
+					value: 0
+				});
+				const output = document.createElement("textarea");
+				Object.assign(output.style, {
+					width: "99%",
+					height: "99%"
+				});
+				textareas.appendChild(output);
+				const srcList = [];
+				const print = function() {
+					output.value = "";
+					for (src of srcList) {
+						output.value += "\n";
+						for (let i = 0; i < parseInt(indentCount.value); i ++)
+							output.value += "\t";
+						if (fileName.checked)
+							output.value += '"' + src.name + '": ';
+						output.value += backgroundImage.checked ? ("'url(\"" + src.src + "\")',") : ("'" + src.src + "',");
+					}
+				};
+				document.body.addEventListener("dragenter", (e) => {
+					e.stopPropagation();
+					e.preventDefault();
+				}, false);
+				document.body.addEventListener("dragover", (e) => {
+					e.stopPropagation();
+					e.preventDefault();
+				}, false);
+				document.body.addEventListener("drop", (e) => {
+					e.stopPropagation();
+					e.preventDefault();
+					srcList.length = 0;
+					let count = e.dataTransfer.files.length;
+					document.title = "Loading " + count + " images";
+					for (let file of e.dataTransfer.files)
+						if (file.type.startsWith("image/")) {
+							const reader = new FileReader();
+							reader.index = srcList.length;
+							srcList.push({
+								name: file.name
+							});
+							reader.onload = (e) => {
+								srcList[reader.index].src = e.target.result;
+								document.title = "Loading " + (-- count) + " images";
+								if (0 == count) 
+									print();
+							};
+							reader.readAsDataURL(file);
+						} else {
+							count --;
+						}
+				}, false);
+				fileName.addEventListener("change", (e) => {
+					print();
+				}, false);
+				backgroundImage.addEventListener("change", (e) => {
+					print();
+				}, false);
+			})();
+		</script>
+	</body>
+</html>

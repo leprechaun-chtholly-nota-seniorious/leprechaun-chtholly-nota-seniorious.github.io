@@ -9,7 +9,7 @@
 			gtag('js', new Date());
 			gtag('config', 'G-2JDTM1R9SQ');
 		</script>
-		<title>Image To Base64</title>
+		<title>Image to Base64</title>
 		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
 	</head>
@@ -44,43 +44,58 @@
 				Object.assign(tr2.style, {
 					height: "98%"
 				});
-				const checkboxs = document.createElement("td");
-				tr1.appendChild(checkboxs);
+				const settings = document.createElement("td");
+				tr1.appendChild(settings);
 				const textareas = document.createElement("td");
 				tr2.appendChild(textareas);
 				const fileName = document.createElement("input");
-				checkboxs.appendChild(fileName);
+				settings.appendChild(fileName);
 				fileName.type = "checkbox";
-				checkboxs.appendChild(document.createTextNode("fileName"));
+				settings.appendChild(document.createTextNode("fileName"));
 				const backgroundImage = document.createElement("input");
-				checkboxs.appendChild(backgroundImage);
+				settings.appendChild(backgroundImage);
 				backgroundImage.type = "checkbox";
-				checkboxs.appendChild(document.createTextNode("backgroundImage ． indent "));
+				settings.appendChild(document.createTextNode("backgroundImage ． indent "));
 				const indentCount = document.createElement("input");
-				checkboxs.appendChild(indentCount);
+				settings.appendChild(indentCount);
 				indentCount.style.width = "30px";
 				Object.assign(indentCount, {
 					type: "number",
 					min: 0,
 					value: 0
 				});
+				const indentChar = document.createElement("select");
+				settings.appendChild(indentChar);
+				const indentTab = document.createElement("option");
+				indentChar.appendChild(indentTab);
+				indentTab.value = "\t";
+				indentTab.appendChild(document.createTextNode("tab"));
+				const indentSpace = document.createElement("option");
+				indentChar.appendChild(indentSpace);
+				indentSpace.value = " ";
+				indentSpace.appendChild(document.createTextNode("space"));
 				const output = document.createElement("textarea");
 				Object.assign(output.style, {
+					color: "white",
+					backgroundColor: "black",
 					width: "99%",
 					height: "99%"
 				});
+				output.value = "Drag & drop images anywhere";
 				textareas.appendChild(output);
 				const srcList = [];
 				const print = function() {
-					output.value = "";
+					let count = srcList.length;
+					let value = "";
 					for (src of srcList) {
-						output.value += "\n";
+						value += "\n";
 						for (let i = 0; i < parseInt(indentCount.value); i ++)
-							output.value += "\t";
+							value += indentChar.value;
 						if (fileName.checked)
-							output.value += '"' + src.name + '": ';
-						output.value += backgroundImage.checked ? ("'url(\"" + src.src + "\")',") : ("'" + src.src + "',");
+							value += '"' + src.name + '": ';
+						value += backgroundImage.checked ? ("'url(\"" + src.src + "\")',") : ("'" + src.src + "',");
 					}
+					output.value = value
 				};
 				document.body.addEventListener("dragenter", (e) => {
 					e.stopPropagation();
@@ -95,7 +110,7 @@
 					e.preventDefault();
 					srcList.length = 0;
 					let count = e.dataTransfer.files.length;
-					document.title = "Loading " + count + " images";
+					output.value = "Loading " + count + " images";
 					for (let file of e.dataTransfer.files)
 						if (file.type.startsWith("image/")) {
 							const reader = new FileReader();
@@ -105,8 +120,7 @@
 							});
 							reader.onload = (e) => {
 								srcList[reader.index].src = e.target.result;
-								document.title = "Loading " + (-- count) + " images";
-								if (0 == count) 
+								if (0 == -- count) 
 									print();
 							};
 							reader.readAsDataURL(file);
@@ -118,6 +132,12 @@
 					print();
 				}, false);
 				backgroundImage.addEventListener("change", (e) => {
+					print();
+				}, false);
+				indentCount.addEventListener("change", (e) => {
+					print();
+				}, false);
+				indentChar.addEventListener("change", (e) => {
 					print();
 				}, false);
 			})();

@@ -20,19 +20,21 @@
 					height: "100%"
 				});
 				Object.assign(document.body.style, {
+					color: 'white',
 					backgroundColor: 'black',
 					margin: 0,
 					height: "100%",
 					display: "flex",
 					justifyContent: "center",
-					alignItems: "center"
+					alignItems: "center",
+					'font-size': "200%"
 				});
 				const img = document.createElement("img");
 				Object.assign(img.style, {
 					maxWidth: "100%",
-					maxHeight: "100%",
-					// filter: "brightness(10)"
+					maxHeight: "100%"
 				});
+				img.alt = "Drag & drop images anywhere";
 				document.body.appendChild(img);
 				const title = "Image Viewer";
 				const srcList = [];

@@ -578,9 +578,7 @@
 					top: 0,
 					'overflow-x': 'hidden',
 					'overflow-y': 'auto',
-					// 'scrollbar-width': 'thin',
-					'scrollbar-color': '#686868 #060606',
-					'pointer-events': 'none'
+					'scrollbar-color': '#686868 #060606'
 				});
 				var bgShare = [
 					'#7F7F7F',
@@ -773,7 +771,7 @@
 						width: imageWidth - gap + 'px',
 						height: imageHeight - gap + 'px',
 						position: 'absolute',
-						left: (0.5 * ((i + 1) % 2)) * imageWidth + 'px',
+						left: (0.5 * (i % 2)) * imageWidth + 'px',
 						top: 0.75 * i * imageHeight + 'px',
 						backgroundColor: '#DFDFDF',
 						backgroundPosition: 'center',
@@ -785,8 +783,7 @@
 						alignItems: 'center',
 						fontSize: 0.3 * imageHeight + 'px',
 						fontWeight: 'bold',
-						fontFamily: 'sans-serif',
-						'pointer-events': 'auto'
+						fontFamily: 'sans-serif'
 					});
 					if (undefined !== properties._style)
 						Object.assign(fn.style, properties._style);

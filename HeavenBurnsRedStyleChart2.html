@@ -412,12 +412,16 @@
 				var lbLeftOffset = 3;
 				var onPointerdown = function(e) {
 					e.preventDefault();
-					if ('mouse' !== e.pointerType || 0 === e.button)
+					if ('mouse' !== e.pointerType || 0 === e.button) {
+						e.target.clientX = e.clientX;
+						e.target.clientY = e.clientY;
 						e.target.pointerdown = true;
+					}
 				};
 				var onPointermove = function(e) {
 					e.preventDefault();
-					e.target.pointerdown = false;
+					if (e.target.pointerdown && 10000 < (Math.pow(e.clientX - e.target.clientX, 2) + Math.pow(e.clientY - e.target.clientY, 2)))
+						e.target.pointerdown = false;
 				};
 				var onPointercancel = function(e) {
 					e.preventDefault();
@@ -771,7 +775,7 @@
 						width: imageWidth - gap + 'px',
 						height: imageHeight - gap + 'px',
 						position: 'absolute',
-						left: (0.5 * (i % 2)) * imageWidth + 'px',
+						left: (0.5 * ((i + 1) % 2)) * imageWidth + 'px',
 						top: 0.75 * i * imageHeight + 'px',
 						backgroundColor: '#DFDFDF',
 						backgroundPosition: 'center',

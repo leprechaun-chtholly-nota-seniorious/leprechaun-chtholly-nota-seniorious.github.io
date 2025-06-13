@@ -50,22 +50,28 @@
 				tr2.appendChild(textareas);
 				const fileName = document.createElement("input");
 				settings.appendChild(fileName);
+				fileName.id = "ITB_FILENAME";
 				fileName.type = "checkbox";
+				fileName.checked = "true" === localStorage.getItem(fileName.id);
 				settings.appendChild(document.createTextNode("fileName"));
 				const backgroundImage = document.createElement("input");
 				settings.appendChild(backgroundImage);
+				backgroundImage.id = "ITB_BACKGROUNDIMAGE";
 				backgroundImage.type = "checkbox";
+				backgroundImage.checked = "true" === localStorage.getItem(backgroundImage.id);
 				settings.appendChild(document.createTextNode("backgroundImage ． indent "));
 				const indentCount = document.createElement("input");
 				settings.appendChild(indentCount);
+				indentCount.id = "ITB_INDENTCOUNT";
 				indentCount.style.width = "30px";
 				Object.assign(indentCount, {
 					type: "number",
 					min: 0,
-					value: 0
+					value: null === localStorage.getItem(indentCount.id) ? 0 : localStorage.getItem(indentCount.id)
 				});
 				const indentChar = document.createElement("select");
 				settings.appendChild(indentChar);
+				indentChar.id = "ITB_INDENTCHAR";
 				const indentTab = document.createElement("option");
 				indentChar.appendChild(indentTab);
 				indentTab.value = "\t";
@@ -74,12 +80,14 @@
 				indentChar.appendChild(indentSpace);
 				indentSpace.value = " ";
 				indentSpace.appendChild(document.createTextNode("space"));
+				indentChar.value = null === localStorage.getItem(indentChar.id) ? "\t" : localStorage.getItem(indentChar.id);
 				const output = document.createElement("textarea");
 				Object.assign(output.style, {
 					color: "white",
 					backgroundColor: "black",
-					width: "99%",
-					height: "99%"
+					width: "100%",
+					height: "100%",
+					"box-sizing": "border-box"
 				});
 				output.value = "Drag & drop images anywhere";
 				textareas.appendChild(output);
@@ -95,7 +103,7 @@
 							value += '"' + src.name + '": ';
 						value += backgroundImage.checked ? ("'url(\"" + src.src + "\")',") : ("'" + src.src + "',");
 					}
-					output.value = value
+					output.value = "" === value ? "Drag & drop images anywhere" : value;
 				};
 				document.body.addEventListener("dragenter", (e) => {
 					e.stopPropagation();
@@ -129,15 +137,19 @@
 						}
 				}, false);
 				fileName.addEventListener("change", (e) => {
+					localStorage.setItem(fileName.id, fileName.checked);
 					print();
 				}, false);
 				backgroundImage.addEventListener("change", (e) => {
+					localStorage.setItem(backgroundImage.id, backgroundImage.checked);
 					print();
 				}, false);
 				indentCount.addEventListener("change", (e) => {
+					localStorage.setItem(indentCount.id, indentCount.value);
 					print();
 				}, false);
 				indentChar.addEventListener("change", (e) => {
+					localStorage.setItem(indentChar.id, indentChar.value);
 					print();
 				}, false);
 			})();

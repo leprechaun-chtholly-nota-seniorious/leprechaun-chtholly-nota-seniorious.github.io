@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-2JDTM1R9SQ"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-2JDTM1R9SQ');
+		</script>
+		<title>bilibili2025动画角色人气大赏</title>
+		<meta content="text/html;charset=UTF-8" http-equiv="Content-Type"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+		<script src="dynamic/bilibiliMoe2025Data.js"></script>
+		<style>
+			td {
+				text-align: center;
+				border: 1px solid black;
+				opacity: 0.2;
+			}
+			td:hover {
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			const region = ['经典·燃', '经典·萌', '新番·燃', '新番·萌']
+			const group = ['A组', 'B组', 'C组', 'D组', 'E组', 'F组', 'G组', 'H组']
+			const a = document.createElement('a');
+			document.body.appendChild(a);
+			Object.assign(a.style, {
+				display: 'flex',
+				'justify-content': 'center'
+			});
+			a.href = 'https://www.bilibili.com/blackboard/era/jQ8lQ7PHbp32izw3.html';
+			a.appendChild(document.createTextNode('【bilibili2025动画角色人气大赏 海选阶段 200进64】 更新时间：' + bilibiliMoe2025Timestamp));
+			for (let i = 0; i < 4; i ++) {
+				const table = document.createElement('table');
+				document.body.appendChild(table);
+				Object.assign(table.style, {
+					width: '24%',
+					position: 'absolute',
+					left: (25 * i + 0.5) + '%',
+					top: '36px'
+				});
+				const tr1 = document.createElement('tr');
+				table.appendChild(tr1);
+				const td1 = document.createElement('td');
+				tr1.appendChild(td1);
+				td1.style.opacity = 1;
+				td1.colSpan = 8;
+				td1.appendChild(document.createTextNode(region[i]))
+				const tr2 = document.createElement('tr');
+				table.appendChild(tr2);
+				for (let k = 0; k < 8; k ++) {
+					const td2 = document.createElement('td');
+					tr2.appendChild(td2);
+					td2.style.opacity = 1;
+					td2.appendChild(document.createTextNode(group[k]))
+				}
+				for (let j = 0; j < 25; j ++) {
+					const tr = document.createElement('tr');
+					table.appendChild(tr);
+					for (let k0 = 0; k0 < 8; k0 ++) {
+						const k = 0 === j % 2 ? k0 : 7 - k0;
+						const data = bilibiliMoe2025Data[200 * i + 8 * j + k];
+						const td = document.createElement('td');
+						tr.appendChild(td);
+						Object.assign(td.style, {
+							width: '12.5%',
+							'background-color': 64 < 8 * j + 1 + k ? '#F8C0C0' : '#D3ECB9'
+						});
+						if ('夏日口袋' === data.source || '键等学园/键等 第二季' === data.source)
+							td.style.opacity = 1;
+						td.title = data.name + '\n' + data.source;
+						td.appendChild(document.createTextNode(8 * j + 1 + k))
+						td.appendChild(document.createElement('br'))
+						const img = document.createElement('img');
+						td.appendChild(img)
+						img.src = data.avatar;
+						img.style.maxWidth = '100%';
+						td.appendChild(document.createElement('br'))
+						td.appendChild(document.createTextNode(data.votes))
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

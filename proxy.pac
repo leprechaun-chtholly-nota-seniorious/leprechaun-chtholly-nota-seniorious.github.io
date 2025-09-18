@@ -1,0 +1,1 @@
+function FindProxyForURL(url, host){return url.startsWith("ssh:")?"DIRECT":"PROXY localhost:920";}

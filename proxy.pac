@@ -1,1 +1,1 @@
-function FindProxyForURL(url, host){return "PROXY localhost:920";}
+function FindProxyForURL(url, host){return "PROXY localhost:8080";}

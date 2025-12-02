@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-2JDTM1R9SQ"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-2JDTM1R9SQ');
+		</script>
+		<title>Re:Stage! Prism Step Gacha Info</title>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+		<style>
+			body {
+				margin: 0;
+			}
+			span {
+				display: inline-block;
+				height: 128px;
+				font-size: 24px;
+				font-weight: bold;
+				text-align: center;
+				box-sizing: border-box;
+			}
+			body > span {
+				width: 128px;
+			}
+			a > span:hover {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			(() => {
+				const p = prompt();
+				if (null === p || 0 === p.trim().length)
+					return;
+				(async () => {
+					try {
+						const response0 = await fetch('https://script.google.com/macros/s/AKfycbz-GOVnGaEjZiM7OwQxJ03aDOVXNDIj3iLzxhQ8BGD46RiRVaif-kRlRbhz7kP7e8uaBA/exec?p=' + p);
+						switch (response0.status) {
+						case 200:
+							const data = await response0.json();
+							const url = data.url;
+							const encoder = new TextEncoder();
+							const getObjectURL = async (item, response) => {
+								return URL.createObjectURL(new Blob([await crypto.subtle.decrypt({name: 'AES-GCM', iv: Uint8Array.fromBase64(item.iv)}, await crypto.subtle.deriveKey({name: 'PBKDF2', salt: Uint8Array.fromBase64(item.salt), iterations: 100000, hash: 'SHA-256'}, await crypto.subtle.importKey('raw', encoder.encode('和泉つばす先生大好き！'), {name: 'PBKDF2'}, false, ['deriveKey']), {name: 'AES-GCM', length: 256}, false, ['encrypt', 'decrypt']), await (await response.blob()).arrayBuffer())], {type: 'image/webp'}));
+							};
+							const onclick = async e => {
+								try {
+									e.stopPropagation();
+									e.preventDefault();
+									const span = e.target;
+									const a = span.parentNode;
+									const item = data.main[span.id];
+									const response = await fetch(url + item.id);
+									switch (response.status) {
+									case 200:
+										const objectURL = await getObjectURL(item, response);
+										a.target = '_blank';
+										a.href = objectURL;
+										a.click();
+										span.removeEventListener('click', onclick);
+										// URL.revokeObjectURL(objectURL);
+										break;
+									default:
+										console.log(response0.status + ' ' + response0.statusText);
+									}
+								} catch (error) {
+									console.log(error);
+								}
+							};
+							const bgSet = {};
+							let hasFirstHalf = false;
+							let spanContainer;
+							for (const name in data.main) {
+								const isFirstHalf = name.endsWith('_h');
+								const a = document.createElement('a');
+								const span = document.createElement('span');
+								span.id = name;
+								span.addEventListener('click', onclick);
+								span.style.width = isFirstHalf || hasFirstHalf ? '64px' : '128px';
+								const index = parseInt(name.substring(0, name.length - 2)) - 1;
+								span.style.backgroundPosition = -(index % 10) * 128 - (hasFirstHalf ? 64 : 0) + 'px ' + -(Math.floor(index / 10) % 10) * 128 + 'px';
+								const group = Math.floor(index / 100) * 100 + 1;
+								if (undefined === bgSet[group])
+									bgSet[group] = [];
+								bgSet[group].push(span);
+								a.appendChild(span);
+								if (isFirstHalf) {
+									spanContainer = document.createElement('span');
+									document.body.appendChild(spanContainer);
+								}
+								if (isFirstHalf || hasFirstHalf)
+									spanContainer.appendChild(a);
+								else
+									document.body.appendChild(a);
+								hasFirstHalf = isFirstHalf;
+							}
+							for (const group in bgSet) {
+								try {
+									const item = data[group + 't'];
+									const response = await fetch(url + item.id);
+									switch (response.status) {
+									case 200:
+										const objectURL = await getObjectURL(item, response);
+										for (const span of bgSet[group]) {
+											span.style.backgroundImage = 'url("' + objectURL + '")';
+										}
+										break;
+									default:
+										console.log(response0.status + ' ' + response0.statusText);
+									}
+								} catch (error) {
+									console.log(error);
+								}
+							};
+							break;
+						default:
+							document.body.appendChild(document.createTextNode(response0.status + ' ' + response0.statusText));
+						}
+					} catch (error) {
+						console.log(error);
+						document.body.appendChild(document.createTextNode(error.name + ' ' + error.message));
+					}
+				})();
+			})();
+		</script>
+	</body>
+</html>

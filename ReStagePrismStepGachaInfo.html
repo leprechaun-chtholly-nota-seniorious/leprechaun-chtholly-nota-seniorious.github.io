@@ -39,7 +39,7 @@
 				const getData = async () => {
 					const RE_STAGE_DATA = 'RE_STAGE_DATA';
 					let data = JSON.parse(localStorage.getItem(RE_STAGE_DATA));
-					if (null !== data && undefined !== data.timestamp && data.timestamp < re_stage_timestamp_local)
+					if (null !== data && undefined !== data.timestamp && data.timestamp > re_stage_timestamp)
 						return data;
 					const p = prompt();
 					if (null === p || 0 === p.trim().length)

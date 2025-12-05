@@ -27,11 +27,13 @@
 			span > a > span {
 				width: 64px;
 			}
+			a > span {
+				background-image: url("data:image/webp;base64,UklGRqwEAABXRUJQVlA4TJ8EAAAvf8AfAAVV9/+zWBq3sK9un+NwjB8zybiTjEHvCwqLReJG4RAjR6ERiKO4gCbIXkCDbYJBNGnS5CcG+i9QnlWbRPR/AvBPV/FM39+zWh7VkAQ/wjAMf3wq1CF1n8Jo8S0aDogFkW34Jg9n+h7Zh9cDkJwPNvc3QvSptZg466V3psc1jKLwVIg59Smihu8L3Xvw+t/DL210vlwul+vlHN5n2HdSFIwv0yWwZN4weIQXy1Py8nyjfWIAhsC+8QXa8GJ9ygA8HHzvAP2JEPSeGMOL/TXsgKeDTz1QBNRPnqjOlMsN6L7TAgkZ0Bs/XKjXSygwfSKFZ6B28O6FIaRcLqcWyEK7U/S9BjIHgRf6yMEDkAHlZICLC+kD5uD8ANAEVlHA4S/h4NQAwDMIF05hwAAgcWF8YE60iL+AnT+FURSFb5/iAa+VgwhezM+kMxa7/Pzj7VpwzAsHDz+IN8qpWaInNLUvPY7mBeXJ7nyDe0lqsGPVZrfbLc4+DID0fLU4n8cV0BEK7LiL45+z8U8GIA/Pc+coHrFqb1Vix4/bT8v3FkCfhKfT6RReG6w93Rdijh3Xt5/W7x0AyK6uPwS2aFhdPj4k9jzcfhLjCQdb/CQ9D2a6kX7GB8Ni2m04ltZBzI6lObzOBT8WcaPdxmPBT3qGg21jyo0dDVJCXOBwZWyXqOOBTOOlW6ZwxKaOb3H8M45/fuCoTV8/qobjr9xw1rHBM2Z2I+MzSdM0TdLWeERrrV7NFro0zebTVPjCKNv12iSzTbgfjLI3K/Eks08nHxhFXcekGbX0gSLrVRgtkfszNGXWKDNy+rE/7UCvkdKyx/7UprSL+98VMoePg6loabc/7cCs0ae0aX/GAVbNKWkND2qSXmdICJnxgaForNwnNmkq4UVjp7G6yNKFpJjgSaOXtDbrwXzkSZqmSdHDo2ZOG2x0FFwo+NYYg//XY/esqppN+zPTOI6jMlsbn3leFEWR543elx7l4rQtkRe2ck9KWpsNibywzsf9KEnUm1F5QbzvxkjquJm2oOZsLxNJ6q0U9HInRtLHjYiclk/7UA7kRpgL7g29jc5Fv49pN8wF34faDXchvWG2oRwU2KdxgY3WpLzbCUaa2sqYUwqzF0Masdk+t8sEAIiubTuut6Cl4GKYAEBR9HbAMpuMA+irsqyqsqw+9DoGmjPW9z1jfIKBsho1tjzc87m8lIB+ltViWcpVIFm/zDgM9Lg0Gmyc1/c8v9cCgHlU9nINyXpbJmAAPb5MGntuSkKl3SnW27MBfhzKilh2NkYpY8N7svZDU5FLM6f5R1M3TScWFCMx4QVTOhAzollu5cxA67kXpIOKvbDGWrzwns68IByUL7yxr4Ur7YPBRQeMDdk4Mj6YXHCgo3FAMBLr4cWHgwmqobeAdCD8wEpSDQwO6gmmp01+0KRyALiDZgAGRmAcnhSlXdnBHThF+QK8tClbOKolAMNtWD/Bn+JRzpVlj1fpoNF4FYzNMa7gVV5XZVk+mcascdBhXg2cMdaLCf5Vk4Elp8kFAEYb+N+0lA6HOxFafTyYrDqFIzb9Qitw1GbgjHGJf7sCAA==");
+			}
 			a > span:hover {
 				border: 1px solid black;
 			}
 		</style>
-		<script src="dynamic/re_stage_timestamp.js"></script>
 	</head>
 	<body>
 		<script>
@@ -41,6 +43,7 @@
 				div.style.left = '0px';
 				div.style.top = '0px';
 				div.style.width = '100%';
+				div.style.backgroundColor = 'white';
 				document.body.appendChild(div);
 				try {
 					const getData = async () => {
@@ -48,101 +51,129 @@
 						let data = JSON.parse(localStorage.getItem(RE_STAGE_DATA));
 						if (null !== data && undefined !== data.timestamp && data.timestamp > re_stage_timestamp)
 							return data;
+						const p = prompt();
+						if (null === p || 0 === p.trim().length)
+							return {};
 						try {
-							const response = await fetch('https://script.google.com/macros/s/AKfycbx9K2BllKD0eEy678FyuZ8CD7cxspFLrEVKOY9eLB_XcuqrHvyfO0o7iMLq-uR7eOA8/exec');
+							const response = await fetch('https://script.google.com/macros/s/AKfycbz-GOVnGaEjZiM7OwQxJ03aDOVXNDIj3iLzxhQ8BGD46RiRVaif-kRlRbhz7kP7e8uaBA/exec?p=' + p);
 							switch (response.status) {
 							case 200:
 								data = await response.json();
 								localStorage.setItem(RE_STAGE_DATA, JSON.stringify(data));
 								return data;
+							default:
+								const pre = document.createElement('pre');
+								pre.appendChild(document.createTextNode(response.status + ' ' + response.statusText));
+								div.appendChild(pre);
 							}
 						} catch (error) {
 							const pre = document.createElement('pre');
 							pre.appendChild(document.createTextNode(error.stack));
 							div.appendChild(pre);
+							console.log(error);
 						}
 						return {};
-					}
-					const data = await getData();
-					const url = data.url;
-					const encoder = new TextEncoder();
-					const getObjectURL = async (item, response) => {
-						return URL.createObjectURL(new Blob([await crypto.subtle.decrypt({name: 'AES-GCM', iv: Uint8Array.fromBase64(item.iv)}, await crypto.subtle.deriveKey({name: 'PBKDF2', salt: Uint8Array.fromBase64(item.salt), iterations: 100000, hash: 'SHA-256'}, await crypto.subtle.importKey('raw', encoder.encode('和泉つばす先生大好き！'), {name: 'PBKDF2'}, false, ['deriveKey']), {name: 'AES-GCM', length: 256}, false, ['encrypt', 'decrypt']), await (await response.blob()).arrayBuffer())], {type: 'image/webp'}));
 					};
-					const onclick = async e => {
-						try {
-							e.stopPropagation();
-							e.preventDefault();
-							const span = e.target;
-							const a = span.parentNode;
-							const item = data.main[span.id];
-							const response = await fetch(url + item.id);
-							switch (response.status) {
-							case 200:
-								const objectURL = await getObjectURL(item, response);
-								a.target = '_blank';
-								a.href = objectURL;
-								a.click();
-								span.removeEventListener('click', onclick);
-								break;
-							default:
-								console.log(response.status + ' ' + response.statusText);
+					const initialize = async () => {
+						const data = await getData();
+						const url = data.url;
+						if (undefined === url) {
+							document.body.style.height = '100%';
+							document.body.style.backgroundColor = 'black';
+							return;
+						}
+						const encoder = new TextEncoder();
+						const getObjectURL = async (item, response) => {
+							return URL.createObjectURL(new Blob([await crypto.subtle.decrypt({name: 'AES-GCM', iv: Uint8Array.fromBase64(item.iv)}, await crypto.subtle.deriveKey({name: 'PBKDF2', salt: Uint8Array.fromBase64(item.salt), iterations: 100000, hash: 'SHA-256'}, await crypto.subtle.importKey('raw', encoder.encode('和泉つばす先生大好き！'), {name: 'PBKDF2'}, false, ['deriveKey']), {name: 'AES-GCM', length: 256}, false, ['encrypt', 'decrypt']), await (await response.blob()).arrayBuffer())], {type: 'image/webp'}));
+						};
+						const onclick = async e => {
+							try {
+								e.stopPropagation();
+								e.preventDefault();
+								const span = e.target;
+								const a = span.parentNode;
+								const item = data.main[span.id];
+								const response = await fetch(url + item.id);
+								switch (response.status) {
+								case 200:
+									const objectURL = await getObjectURL(item, response);
+									a.target = '_blank';
+									a.href = objectURL;
+									a.click();
+									span.removeEventListener('click', onclick);
+									break;
+								default:
+									const pre = document.createElement('pre');
+									pre.appendChild(document.createTextNode(response.status + ' ' + response.statusText));
+									div.appendChild(pre);
+								}
+							} catch (error) {
+								const pre = document.createElement('pre');
+								pre.appendChild(document.createTextNode(error.stack));
+								div.appendChild(pre);
+								console.log(error);
 							}
-						} catch (error) {
-							const pre = document.createElement('pre');
-							pre.appendChild(document.createTextNode(error.stack));
-							div.appendChild(pre);
-						}
-					};
-					const bgSet = {};
-					let hasFirstHalf = false;
-					let spanContainer;
-					for (const name in data.main) {
-						const isFirstHalf = name.endsWith('_h');
-						const a = document.createElement('a');
-						const span = document.createElement('span');
-						span.id = name;
-						span.addEventListener('click', onclick);
-						const index = parseInt(name.substring(0, name.length - 2)) - 1;
-						span.style.backgroundPosition = -(index % 10) * 128 - (hasFirstHalf ? 64 : 0) + 'px ' + -(Math.floor(index / 10) % 10) * 128 + 'px';
-						const group = Math.floor(index / 100) * 100 + 1;
-						if (undefined === bgSet[group])
-							bgSet[group] = [];
-						bgSet[group].push(span);
-						a.appendChild(span);
-						if (isFirstHalf) {
-							spanContainer = document.createElement('span');
-							document.body.appendChild(spanContainer);
-						}
-						if (isFirstHalf || hasFirstHalf)
-							spanContainer.appendChild(a);
-						else
-							document.body.appendChild(a);
-						hasFirstHalf = isFirstHalf;
-					}
-					for (const group in bgSet) {
-						try {
-							const item = data[group + 't'];
-							const response = await fetch(url + item.id);
-							switch (response.status) {
-							case 200:
-								const objectURL = await getObjectURL(item, response);
-								for (const span of bgSet[group])
-									span.style.backgroundImage = 'url("' + objectURL + '")';
-								break;
-							default:
-								console.log(response.status + ' ' + response.statusText);
+						};
+						const bgSet = {};
+						let hasFirstHalf = false;
+						let spanContainer;
+						for (const name in data.main) {
+							const isFirstHalf = name.endsWith('_h');
+							const a = document.createElement('a');
+							const span = document.createElement('span');
+							span.id = name;
+							span.addEventListener('click', onclick);
+							const index = parseInt(name.substring(0, name.length - 2)) - 1;
+							span.style.backgroundPosition = -(index % 10) * 128 - (hasFirstHalf ? 64 : 0) + 'px ' + -(Math.floor(index / 10) % 10) * 128 + 'px';
+							const group = Math.floor(index / 100) * 100 + 1;
+							if (undefined === bgSet[group])
+								bgSet[group] = [];
+							bgSet[group].push(span);
+							a.appendChild(span);
+							if (isFirstHalf) {
+								spanContainer = document.createElement('span');
+								document.body.appendChild(spanContainer);
 							}
-						} catch (error) {
-							const pre = document.createElement('pre');
-							pre.appendChild(document.createTextNode(error.stack));
-							div.appendChild(pre);
+							if (isFirstHalf || hasFirstHalf)
+								spanContainer.appendChild(a);
+							else
+								document.body.appendChild(a);
+							hasFirstHalf = isFirstHalf;
 						}
+						(async () => {
+							for (const group in bgSet) {
+								try {
+									const item = data[group + 't'];
+									const response = await fetch(url + item.id);
+									switch (response.status) {
+									case 200:
+										const objectURL = await getObjectURL(item, response);
+										for (const span of bgSet[group])
+											span.style.backgroundImage = 'url("' + objectURL + '")';
+										break;
+									default:
+										const pre = document.createElement('pre');
+										pre.appendChild(document.createTextNode(response.status + ' ' + response.statusText));
+										div.appendChild(pre);
+									}
+								} catch (error) {
+									const pre = document.createElement('pre');
+									pre.appendChild(document.createTextNode(error.stack));
+									div.appendChild(pre);
+									console.log(error);
+								}
+							};
+						})();
 					};
+					const script = document.createElement('script');
+					script.addEventListener('load', initialize);
+					script.src = 'https://leprechaun-chtholly-nota-seniorious.github.io/dynamic/re_stage_timestamp.js?' + Date.now();
+					document.head.appendChild(script);
 				} catch (error) {
 					const pre = document.createElement('pre');
 					pre.appendChild(document.createTextNode(error.stack));
 					div.appendChild(pre);
+					console.log(error);
 				}
 			})();
 		</script>

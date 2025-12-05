@@ -165,6 +165,15 @@
 							};
 						})();
 					};
+					if (undefined === Uint8Array.fromBase64)
+						Uint8Array.fromBase64 = u => {
+							const s = atob(u);
+							const l = s.length;
+							const b = new Uint8Array(l);
+							for (let i = 0; i < l; i++)
+								b[i] = s.charCodeAt(i);
+							return b;
+						};
 					const script = document.createElement('script');
 					script.addEventListener('load', initialize);
 					script.src = 'https://leprechaun-chtholly-nota-seniorious.github.io/dynamic/re_stage_timestamp.js?' + Date.now();

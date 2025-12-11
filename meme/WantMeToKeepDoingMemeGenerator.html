@@ -50,14 +50,15 @@
 				const div = document.createElement("div");
 				Object.assign(div.style, {
 					backgroundColor: 'white',
-					alignItems: "center"
+					alignItems: "center",
+					padding: "10px"
 				});
 				document.body.appendChild(div);
 				const label = document.createElement("label");
 				Object.assign(label.style, {
 					position: "absolute",
-					width: "340px",
-					height: "404px"
+					width: "320px",
+					height: "394px"
 				});
 				const input = document.createElement("input");
 				Object.assign(input.style, {
@@ -76,7 +77,6 @@
 				div.appendChild(label);
 				const img = document.createElement("img");
 				Object.assign(img.style, {
-					margin: "10px 10px 0 10px",
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
@@ -84,7 +84,7 @@
 					height: "320px",
 					"font-size": "36px"
 				});
-				img.src = "data:image/webp;base64,UklGRqgDAABXRUJQVlA4TJsDAAAvP8FPAA/wP8D/Af4PcP4DD3Td/3PkNv/DArqG4KlyRXArw6+QCI5TmV4g5zZnQnPO2de5OnAeReucbx6BKzD8S60wDlxoNN/iZgNZOkb0fwLk3CbOqf3ff3+F8hA6bBrPSu0p5NaKONls7LZIEpEGCGMQTEU7oB22rxlPeH0V7L6+niKEsWay9OhZfXHF48Ons+S7dqQaaVb5cAQHk83GboukHfwo7x/PqplEYLLZFBfP4PMjjw8RU7WeojGwI9UZbEjGJgPREZhIM+jEM5MNwbe/YHdFRttXD8EZdLJRZzZEAi2dXVJ7CrnVEaqytslAhNEIdkVwcBY4PD7Ehta53JbMx7HS+BBr4tpNImmJG8PKY9LMZOd9G0Vqe/FMUoDv7V4lUpvTVlkWyzFwds1WtnKOaWoDy7AMiNRjGJmDd457UjgbCPCgSPViCm0uogOM3NnxrEhld0VYFuPNRAQFcrgxwKYAAdQssMmQsSM89ExHWJiU2ZJ5sGnYfT0Oae22SIwwhr3v3hQKEUlXTtEeZoTVfdJAgI8AmwyISGM4g63YqxwlhTV7SaTKRAhumFntpUDZYCiknnYthllvU8CcchlgiiF7MOwc/sXF/YmatXaIHuDhep/DPiLSAMGKJF3g4NpUmo4FWvZrO0pKOOxzgDooReZECGsYvBoMfK8hdDDKZbzaTZF4tWMqIlFLqR2tY0eqnLvqlQ2RyIBZFz7nv/fKDbBykgOHkRUM8l5hhO+0Q6qcOq/FKWAvSNOFakd0BCbSEEqvxa0imGm/oJQi8z7t1CsZDWGtlH2HXtOQ2RAJtMCtslIi4Ab8/GzjaB0RMlb2VmpTL2e3PbqaDnru0i9qjMzxJ127nlsekJDZknkGm1bq1q4e9ZpeqHNLXJfXBcCzF6TpUD4oNDiuDfp+reh35Wu9XorMWRbLPtNTYEKgI9jaa5sLy4BIbUW8Tl+TOTd3lLIbzJHXFgJDeF3mPJV6tEZzB7mIYtNacvaZmAPTkjv8nmXRby85NHXZuBZBD1nihk2lzr0ek3q9AdpkbJcdUL6WonoFZjFtyTzY1HVJ5iiBzGQ3dqUYoQs1/crKZRQKMiazm9RE6FEk/1pSj2Iv2iQijWFNkrqm1yH6fG66s5cp14oKXbzTC649uRbKub2VCMGBGgH9fiYSdSJVLk5tPZOmOGWSWaxFZvWh7WfTwjalnH4PH7B+AAqUzZ90r53P//33VxI5twA=";
+				img.src = "data:image/webp;base64,UklGRqYDAABXRUJQVlA4TJkDAAAvP8FPAA8w//M///MfeKDr/p8jt/kfFtA1BE+VK4JbGX6FRHCcyvQCObc5E5pzzr7O1YHzKFrnfPMIXIHhX2qFceBCo/kWNxvI0jGi/xMg5zZxTu3//vsrlIfQYdN4VmpPIbdWxMlmY7dFkog0QBiDYCraAe2wfc14wuurYPf19RQhjDWTpUfP6osrHh8+nSXftSPVSLPKhyM4mGw2dlsk7eBHef94Vs0kApPNprh4Bp8feXyImKr1FI2BHanOYEMyNhmIjsBEmkEnnplsCL79BbsrMtq+egjOoJONOrMhEmjp7JLaU8itjlCVtU0GIoxGsCuCg7PA4fEhNrTO5bZkPo6VxodYE9duEklL3BhWHpNmJjvv2yhS24tnkgJ8b/cqkdqctsqyWI6Bs2u2spVzTFMbWIZlQKQew8gcvHPck8LZQIAHRaoXU2hzER1g5M6OZ0UquyvCshhvJiIokMONATYFCKBmgU2GjB3hoWc6wsKkzJbMg03D7utxSGu3RWKEMex996ZQiEi6cor2MCOs7pMGAnwE2GRARBrDGWzFXuUoKazZSyJVJkJww8xqLwXKBkMh9bRrMcx6mwLmlMsAUwzZg2Hn8C8u7k/UrLVD9AAP1/sc9hGRBghWJOkCB9em0nQs0LJf21FSwmGfA9RBKTInQljD4NVg4HsNoYNRLuPVborEqx1TEYlaSu1oHTtS5dxVr2yIRAbMuvA5/71XboCVkxw4jKxgkPcKI3ynHVLl1HktTgF7QZouVDuiIzCRhlB6LW4VwUz7BaUUmfdpp17JaAhrpew79JqGzIZIoAVulZUSATfg52cbR+uIkLGyt1Kbejm77dHVdNBzl35RY2SOP+na9dzygITMlswz2LRSt3b1qNf0Qp1b4rq8LgCevSBNh/JBocFxbdD3a0W/K1/r9VJkzrJY9pmeAhMCHcHWXttcWAZEaividfqazLm5o5TdYI68thAYwusy56nUozWaO8hFFJvWkrPPxByYltzh9yyLfnvJoanLxrUIesgSN2wqde71mNTrDdAmY7vsgPK1FNUrMItpS+bBpq5LMkcJZCa7sSvFCF2o6VdWLqNQkDGZ3aQmQo8i+deSehR70SYRaQxrktQ1vQ7R53PTnb1MuVZU6OKdXnDtybVQzu2tRAgO1Ajo9zORqBOpcnFq65k0xSmTzGItMqsPbT+bFrYp5fR7+ID1A1CgbP6ke+18/u+/v5LIuQUA";
 				div.appendChild(img);
 				const span = document.createElement("span");
 				Object.assign(span.style, {
@@ -96,7 +96,7 @@
 				span.appendChild(document.createTextNode("要我一直"));
 				const thumbnail = document.createElement("img");
 				Object.assign(thumbnail.style, {
-					margin: "5px",
+					margin: "5px 0",
 					display: "inline-block",
 					width: "64px",
 					height: "64px",

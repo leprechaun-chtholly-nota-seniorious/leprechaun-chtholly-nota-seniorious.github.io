@@ -16,26 +16,40 @@
 	</head>
 	<body>
 		<script>
-			(function() {
+			(() => {
 				const displayImage = files => {
-					for (let file of files)
-						if (file.type.startsWith("image/")) {
-							const reader = new FileReader();
-							reader.onload = (e) => {
-								thumbnail.src = e.target.result;
-								img.src = e.target.result;
-								setTimeout(() => {
-									domtoimage.toPng(div).then(function(u) {
-										var a = document.createElement('a');
-										a.download = file.name + '_' + Date.now() + '.png';
-										a.href = u;
-										a.click();
-									});
-								}, 1000);
-							};
-							reader.readAsDataURL(file);
-							break;
-						}
+					try {
+						for (const file of files)
+							if (file.type.startsWith("image/")) {
+								const reader = new FileReader();
+								reader.onload = (e) => {
+									thumbnail.src = e.target.result;
+									img.src = e.target.result;
+									setTimeout(() => {
+										try {
+											domtoimage.toPng(div).then(u => {
+												const a = document.createElement('a');
+												a.download = file.name + '_' + Date.now() + '.png';
+												a.href = u;
+												a.click();
+											});
+										} catch (e) {
+											const pre = document.createElement('pre');
+											pre.appendChild(document.createTextNode(e.stack));
+											label.appendChild(pre);
+											console.log(e);
+										}
+									}, 1000);
+								};
+								reader.readAsDataURL(file);
+								break;
+							}
+					} catch (e) {
+						const pre = document.createElement('pre');
+						pre.appendChild(document.createTextNode(e.stack));
+						label.appendChild(pre);
+						console.log(e);
+					}
 				};
 				Object.assign(document.documentElement.style, {
 					height: "100%",

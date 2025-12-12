@@ -11,7 +11,7 @@
 		</script>
 		<title>Image to Base64</title>
 		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+		<meta name="viewport" content="width=device-width"/>
 	</head>
 	<body>
 		<script>
@@ -48,6 +48,18 @@
 				tr1.appendChild(settings);
 				const textareas = document.createElement("td");
 				tr2.appendChild(textareas);
+				const fileSelect = document.createElement("input");
+				Object.assign(fileSelect, {
+					type: "file",
+					accept: "image/*",
+					multiple: true,
+				});
+				fileSelect.addEventListener("change", (e) => {
+					e.stopPropagation();
+					e.preventDefault();
+					image2base64(e.target.files);
+				}, false);
+				settings.appendChild(fileSelect);
 				const fileName = document.createElement("input");
 				settings.appendChild(fileName);
 				fileName.id = "ITB_FILENAME";
@@ -105,21 +117,11 @@
 					}
 					output.value = "" === value ? "Drag & drop images anywhere" : value;
 				};
-				document.body.addEventListener("dragenter", (e) => {
-					e.stopPropagation();
-					e.preventDefault();
-				}, false);
-				document.body.addEventListener("dragover", (e) => {
-					e.stopPropagation();
-					e.preventDefault();
-				}, false);
-				document.body.addEventListener("drop", (e) => {
-					e.stopPropagation();
-					e.preventDefault();
+				const image2base64 = function(files) {
 					srcList.length = 0;
-					let count = e.dataTransfer.files.length;
+					let count = files.length;
 					output.value = "Loading " + count + " images";
-					for (let file of e.dataTransfer.files)
+					for (let file of files)
 						if (file.type.startsWith("image/")) {
 							const reader = new FileReader();
 							reader.index = srcList.length;
@@ -135,6 +137,19 @@
 						} else {
 							count --;
 						}
+				};
+				document.body.addEventListener("dragenter", (e) => {
+					e.stopPropagation();
+					e.preventDefault();
+				}, false);
+				document.body.addEventListener("dragover", (e) => {
+					e.stopPropagation();
+					e.preventDefault();
+				}, false);
+				document.body.addEventListener("drop", (e) => {
+					e.stopPropagation();
+					e.preventDefault();
+					image2base64(e.dataTransfer.files);
 				}, false);
 				fileName.addEventListener("change", (e) => {
 					localStorage.setItem(fileName.id, fileName.checked);
@@ -154,5 +169,6 @@
 				}, false);
 			})();
 		</script>
+		<a href="."><img src="data:image/webp;base64,UklGRlgEAABXRUJQVlA4TEwEAAAvlUAlEJXQsm1bVtvQ/07PD3Eeh8e9Tp0cieFyxyZCAgCAZSOlONu2bdu2bett27Zt27ZtczbbazIB829EmcnQIZre6th6A7WKvINgx3MVo5nL0vxIM88umE856uzK0i2vScwzx18st2NGz8/c/BS1G9Na7E0ny/0Rgy0vczbHyKt0u7c14ZTp95/2vlSDuSuvXZmfO79M2NJ316D7q91RTun4dlhRnCPEmzESlbOSs9mJeTmzkn24k2aippdzm+DiY5rFjik9icNb4JRm/0XOjIymeM5ufbzT7DfiAt4yxvQky7P/2eTIlGw9bTIsamlG/Uzv07I56mRPYsnK2rnOcffAnvi+HfjcKrspeMiteMRmSkQxnJriv5yNODC1vkgphiZWTyJyGyZN7WwCWlHMON700rEHlIILKJn6Bb11oBodPYnbO/Cf4ZQcUnrAphjz0T0hpL2+qRXlaDW8mxKWi7MHWXkGHkKLLuZLF8qMpWmb2sncan0x42FPYva6niqmZONnbnepGnOaYjnNRZGxmZIXOp049Ivh0RS8Nbn2ZUrtUDOFgmLEv/cEzXo9oCcXUCIcTb+YYlh425PIWI6ZU+eulhUzpGBPnFgM9wsoOWPfJ35XY1tTvFjJ/3yn1IHKvf1gWoyiprjOcRk+0JxSec74rRi6r55gWC3CGtiUzkLnNK+YX3g9eQlZwcvcKRli56xWIK7NTxt6EtNPxACriVzDBZSscmJfGV6bcaEp3iLOIhzqnlp3zl2NoaZXTmJumkkYVC7l5BQKi+HZk2BJPMGHHqjZzo+5TtvWnN+iYj7wexJ193M/zXqnpPEFekRnYNdmvGmK2ntRpxcUMyUXTB7TNybFh+qmuHIXvpTp9VnolFryuOKuzehoCiHjPt1pxpsS5moemV8x8ol7EiZdbqfZt6lReWjQoWJoo5uireWzc2nWNaUwn/PoXhUzXjbF4QbuWFCz+Aso5UAL9JFtMXY0xXrYTWmmoj+lwiwRFFoM36b49XFMLabJVaZTOg+t0shiODSFmucRB9Ps0JR0iLJOs5HXhp+XPYnUAu5HejFOTMkqSyX5dW3Gy6ZYAnvzhSzNgqc05bmWpBqHm8AfM6OJKs1sprQxy31XX4zOnsQzmsg0+/plrtOzNis2vhjGFD3x2qEmO6Z+z5qdKGaa4m6PuinZoLNqb5kVDF49tDvejb6AUktWzvPajEUdWON4A/Mp3cva+RdjKnibihnbboJP6XcWj3GxGMGvW0ycGXqoY85cQCnWh6zf5WKQvh6zeN4yQB0xcAElH2iL3rO5NuPXEc+mPMB2SqXgHoISWIxZFfnUaq/hipjShexTXTFSCs4HxrY3HtGeOjutRgFVkif3CzhsMjWFK3N0TwPHJjc8993UCf+ByVSazePI5kyabof+89/vJqSfKF9OZf9GjDkV7334M+fmg9kEes7O0swHc+wcnxVewL/gBA==" style="position: fixed; right: 0; bottom: 0;"/></a>
 	</body>
 </html>

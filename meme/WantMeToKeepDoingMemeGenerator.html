@@ -112,7 +112,7 @@
 				}, false);
 				const label = document.createElement("label");
 				Object.assign(label.style, {
-					position: "absolute",
+					position: "fixed",
 					left: "0",
 					top: "0",
 					width: "100%",
@@ -120,7 +120,7 @@
 				});
 				const input = document.createElement("input");
 				Object.assign(input.style, {
-					display: "none",
+					opacity: 0,
 				});
 				Object.assign(input, {
 					type: "file",

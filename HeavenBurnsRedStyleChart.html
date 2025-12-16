@@ -22,7 +22,7 @@
 	</head>
 	<body>
 		<script>
-			var atOptions = {
+			atOptions = {
 				'key' : 'fb9374709f8705909e960339f3e9f394',
 				'format' : 'iframe',
 				'height' : 60,
@@ -616,6 +616,7 @@
 					width: wsWidth
 				});
 				var script = document.createElement('script');
+				script.defer = true;
 				script.src = 'https://www.highperformanceformat.com/fb9374709f8705909e960339f3e9f394/invoke.js';
 				ad.appendChild(script);
 				document.body.appendChild(ad);

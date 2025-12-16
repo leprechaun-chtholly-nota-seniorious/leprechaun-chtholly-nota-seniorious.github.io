@@ -10,10 +10,31 @@
 		</script>
 		<title>Image to Base64</title>
 		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-		<meta name="viewport" content="width=device-width"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+		<style>
+			a > img {
+				opacity: 0.5;
+			}
+			a > img:hover {
+				opacity: 1;
+			}
+			iframe {
+				position: fixed;
+				left: 50%;
+				bottom: 0;
+				transform: translateX(-50%);
+			}
+		</style>
 	</head>
 	<body>
 		<script>
+			atOptions = {
+				'key' : 'fb9374709f8705909e960339f3e9f394',
+				'format' : 'iframe',
+				'height' : 60,
+				'width' : 468,
+				'params' : {}
+			};
 			(function() {
 				Object.assign(document.documentElement.style, {
 					height: "100%"
@@ -28,7 +49,7 @@
 				document.body.appendChild(table);
 				Object.assign(table.style, {
 					width: "100%",
-					height: "90%"
+					height: "calc(100% - 60px)"
 				});
 				const tr1 = document.createElement("tr");
 				table.appendChild(tr1);
@@ -163,8 +184,12 @@
 					localStorage.setItem(indentChar.id, indentChar.value);
 					print();
 				}, false);
+				const script = document.createElement('script');
+				script.defer = true;
+				script.src = 'https://www.highperformanceformat.com/fb9374709f8705909e960339f3e9f394/invoke.js';
+				document.body.appendChild(script);
 			})();
 		</script>
-		<a href="."><img src="data:image/webp;base64,UklGRlgEAABXRUJQVlA4TEwEAAAvlUAlEJXQsm1bVtvQ/07PD3Eeh8e9Tp0cieFyxyZCAgCAZSOlONu2bdu2bett27Zt27ZtczbbazIB829EmcnQIZre6th6A7WKvINgx3MVo5nL0vxIM88umE856uzK0i2vScwzx18st2NGz8/c/BS1G9Na7E0ny/0Rgy0vczbHyKt0u7c14ZTp95/2vlSDuSuvXZmfO79M2NJ316D7q91RTun4dlhRnCPEmzESlbOSs9mJeTmzkn24k2aippdzm+DiY5rFjik9icNb4JRm/0XOjIymeM5ufbzT7DfiAt4yxvQky7P/2eTIlGw9bTIsamlG/Uzv07I56mRPYsnK2rnOcffAnvi+HfjcKrspeMiteMRmSkQxnJriv5yNODC1vkgphiZWTyJyGyZN7WwCWlHMON700rEHlIILKJn6Bb11oBodPYnbO/Cf4ZQcUnrAphjz0T0hpL2+qRXlaDW8mxKWi7MHWXkGHkKLLuZLF8qMpWmb2sncan0x42FPYva6niqmZONnbnepGnOaYjnNRZGxmZIXOp049Ivh0RS8Nbn2ZUrtUDOFgmLEv/cEzXo9oCcXUCIcTb+YYlh425PIWI6ZU+eulhUzpGBPnFgM9wsoOWPfJ35XY1tTvFjJ/3yn1IHKvf1gWoyiprjOcRk+0JxSec74rRi6r55gWC3CGtiUzkLnNK+YX3g9eQlZwcvcKRli56xWIK7NTxt6EtNPxACriVzDBZSscmJfGV6bcaEp3iLOIhzqnlp3zl2NoaZXTmJumkkYVC7l5BQKi+HZk2BJPMGHHqjZzo+5TtvWnN+iYj7wexJ193M/zXqnpPEFekRnYNdmvGmK2ntRpxcUMyUXTB7TNybFh+qmuHIXvpTp9VnolFryuOKuzehoCiHjPt1pxpsS5moemV8x8ol7EiZdbqfZt6lReWjQoWJoo5uireWzc2nWNaUwn/PoXhUzXjbF4QbuWFCz+Aso5UAL9JFtMXY0xXrYTWmmoj+lwiwRFFoM36b49XFMLabJVaZTOg+t0shiODSFmucRB9Ps0JR0iLJOs5HXhp+XPYnUAu5HejFOTMkqSyX5dW3Gy6ZYAnvzhSzNgqc05bmWpBqHm8AfM6OJKs1sprQxy31XX4zOnsQzmsg0+/plrtOzNis2vhjGFD3x2qEmO6Z+z5qdKGaa4m6PuinZoLNqb5kVDF49tDvejb6AUktWzvPajEUdWON4A/Mp3cva+RdjKnibihnbboJP6XcWj3GxGMGvW0ycGXqoY85cQCnWh6zf5WKQvh6zeN4yQB0xcAElH2iL3rO5NuPXEc+mPMB2SqXgHoISWIxZFfnUaq/hipjShexTXTFSCs4HxrY3HtGeOjutRgFVkif3CzhsMjWFK3N0TwPHJjc8993UCf+ByVSazePI5kyabof+89/vJqSfKF9OZf9GjDkV7334M+fmg9kEes7O0swHc+wcnxVewL/gBA==" style="position: fixed; right: 0; bottom: 10%;"/></a>
+		<a href="."><img src="data:image/webp;base64,UklGRjwCAABXRUJQVlA4TC8CAAAvO8AOEIDcNpIkif673RFZ1Tl7/iJkQZJs2lZd27Zt23rWl23btm3btm3btm32BODvXZAKWQnjARc1tFWJzQomblHVsmngBRG5r/IGFl41o4vhlHVcwNzTZlhgbQV1MxluE+AkTe3lvEumFzR3U9wawwH1/aJTH1Tboh8MpWq9FAcTkc5LjDONqnEAMwsKmcZ4hT+U/dccT/0K2cN5Q/VGMSDAOM6AWr4mclvMGheEA7I9JdfEAFI8SuSjqktsZA9o7BcR+aAKwNPRRKTrChMAGEVZZ4C5BYXMYPSav1oBbK2nbjYTQJ9CdnG7wWzirWJAhAs0dZA7oJZvidwWewEDl4UCyntNcw8lAzI8SOSzKmcG+1Ns5ABoS8e+qg3wciwR6XLAygqqxgKMTKabBgFMLSlkNsMJf2co+6sNwMUuumsFC0DfQvZwbXK8oOy1UkCc23TbCYGAmn4kclNi0sQvyq4IBVT3me57phCQ7mEin1R9GEnVFraA3vSqP5oCfBxORDqDszVUjQWYWEhvGw0wtbSQyc5R9l9LgLcj9L6NHAADCumQvFYOkO0hbXRVBKCmH8FX6PFwSTigvh+003vlAWkeP9QCzCaylR0YGkh7tWcAPo4QGQqAibH6AmDu8yLvmAMsjNQXQ+aeLvKEOU5XefyD8du77s8H2M6hO/oBNqDb/wE2DRz8/2PhxSLPzph4ssgZBkdQ368TewfOnPioGBdFqnQoZSBDpUMB+JsFAA==" style="position: fixed; right: 0; bottom: 60px; filter: invert(1);"/></a>
 	</body>
 </html>

@@ -10,11 +10,26 @@
 		</script>
 		<title>要我一直＿嗎？ - 梗圖產生器</title>
 		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-		<meta name="viewport" content="width=device-width"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
 		<script src="../third-party/MIT/dom-to-image.min.js"></script>
+		<style>
+			iframe {
+				position: fixed;
+				left: 50%;
+				bottom: 0;
+				transform: translateX(-50%);
+			}
+		</style>
 	</head>
 	<body>
 		<script>
+			atOptions = {
+				'key' : 'fb9374709f8705909e960339f3e9f394',
+				'format' : 'iframe',
+				'height' : 60,
+				'width' : 468,
+				'params' : {}
+			};
 			(() => {
 				const text = {
 					zh: {
@@ -162,7 +177,7 @@
 					left: "0",
 					top: "0",
 					width: "100%",
-					height: "90%",
+					height: "100%",
 				});
 				const input = document.createElement("input");
 				Object.assign(input.style, {
@@ -200,8 +215,12 @@
 					location.reload();
 				}, false);
 				document.body.appendChild(select);
+				const script = document.createElement('script');
+				script.defer = true;
+				script.src = 'https://www.highperformanceformat.com/fb9374709f8705909e960339f3e9f394/invoke.js';
+				document.body.appendChild(script);
 			})();
 		</script>
-		<a href=".."><img src="data:image/webp;base64,UklGRkAEAABXRUJQVlA4TDQEAAAvlUAlEKDYSJIjSTL91Z6O7uiazKNPIihAkmzaturgnbi2nm1927Zt27Zt2/7Ptm3btnFxzturJgD/RVSps93tOLnTaWABq455wWF681LkNs1Hs4ZlbVpilvGugZOx7cKS40W8b4GKdbzWcSEfixy7jVcq/mZTxX72ChXBW8spNI9tk1ZzlBr2bZa1l+sEvqrtVt7ly4LnVpJrFN93w0Y8Uu91VKo+g/Yu43Fpnuqg+pt4hye7fA8TWLanJBi0hOaWsuwEeKlD6r6Cpizb7BgAzi7RbA3n045l6yXwqUjUIcfzr6ikB6IGZpYccuxonjCIXZFPcFffDumjyepa4L5JQodWryOOp84r0Q7JVUxTH1EiQNMSbXb+Iv5D9iCdHiBlS4d0zBpeQDaQFHwWAL1Lgrt3kHYxohLr+Om/BHd3SOM3sFkBosaMpqgf4F2ZDu2WNR+yS3k3QbsSqWI4f0kms4RbMo4LkGxJe200dyLry6e+DYCpHdKbc4lcjai+tXxuWIK3SvSp1FAOqI+orQybtskL0LpEO2YyShLRXSyrdnGAk1R3KKNqHsEMRAk92Xd8gHILO6Szx/E6Ml/1SQDsFzrUZxitEDWz9R1an+CXEs2ZREYHRHdL821rlAS4tESjNRnDEilEV/FExwfIEToUqRzCV2KIBvJM7wRI2dGh4PAJBG8jKrCVp/pM4gpyfNchvXqQfFtKDroZUSUPtlLBFWBIiRZKnOIotpHdx7MTPFoSeIi3WbZPfjKMh6t2SYA2HdIWpxwg5n6W/S6Ga1l+5vk+CBCzs0O68T2TWfYAonp28hsNELsCLCjRDW+pY1dwPKLmIn6nVYqDmOtKNOIVHdSwa7kjEN3O73XiFeDuEu1W1HMfy3YgihnJb9YxwEX2dkjFLeNZtgpZml8t6BYgS6ZEd1ZkGcSyexEdaTm/3bwAmFui7gWtbGHZSYjO54CWahDgtxJ9K/aIZbXyEF3CEQVHBOhQonVi99wgKhmpBNFgTunxAI1LVKfNHf+zrBuibHs4pzclr6CjuR3SGUHcGnZF+iCq5Kj2iV8B5pboI7EPlQ6w7DBEL4lmIRN0Lwn2AHCrWpbVR/Q9x7XPTQHu6ZBmSUmybKUkruX6mhN7NkCR6g7N163kN2TVnFmfAJRoYseNiOrLcGoLlQb5unVkNVR7EtHtnFybK8AHDVugd0EZokmcXacALwvPXA345ZE4ovUcXmRogMOEJ54HIFf6ngGITrCE8xseIGnlPR/iU770HQ8jas8VLVb/CrDujlmINzRAdIWwA6V1CfBGchDZDVe2OxrREO7pxgCnB81uwC8fpslC5qYJLlZLUqQVbntRnWojcHcniNvqoEN4d6kD/4XJy1Jl6LGcF9DW7X///TKx/wdFj6P8u4injtJuDxtwtvaiJWRwugqvf5leZzjoEvwHTg==" style="position: fixed; left: 0; top: 0;"/></a>
+		<a href=".."><img src="data:image/webp;base64,UklGRjwCAABXRUJQVlA4TC8CAAAvO8AOEIDcNpIkif673RFZ1Tl7/iJkQZJs2lZd27Zt23rWl23btm3btm3btm32BODvXZAKWQnjARc1tFWJzQomblHVsmngBRG5r/IGFl41o4vhlHVcwNzTZlhgbQV1MxluE+AkTe3lvEumFzR3U9wawwH1/aJTH1Tboh8MpWq9FAcTkc5LjDONqnEAMwsKmcZ4hT+U/dccT/0K2cN5Q/VGMSDAOM6AWr4mclvMGheEA7I9JdfEAFI8SuSjqktsZA9o7BcR+aAKwNPRRKTrChMAGEVZZ4C5BYXMYPSav1oBbK2nbjYTQJ9CdnG7wWzirWJAhAs0dZA7oJZvidwWewEDl4UCyntNcw8lAzI8SOSzKmcG+1Ns5ABoS8e+qg3wciwR6XLAygqqxgKMTKabBgFMLSlkNsMJf2co+6sNwMUuumsFC0DfQvZwbXK8oOy1UkCc23TbCYGAmn4kclNi0sQvyq4IBVT3me57phCQ7mEin1R9GEnVFraA3vSqP5oCfBxORDqDszVUjQWYWEhvGw0wtbSQyc5R9l9LgLcj9L6NHAADCumQvFYOkO0hbXRVBKCmH8FX6PFwSTigvh+003vlAWkeP9QCzCaylR0YGkh7tWcAPo4QGQqAibH6AmDu8yLvmAMsjNQXQ+aeLvKEOU5XefyD8du77s8H2M6hO/oBNqDb/wE2DRz8/2PhxSLPzph4ssgZBkdQ368TewfOnPioGBdFqnQoZSBDpUMB+JsFAA==" style="position: fixed; left: 0; top: 0;"/></a>
 	</body>
 </html>

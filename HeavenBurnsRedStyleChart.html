@@ -13,12 +13,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
 		<script src="third-party/MIT/dom-to-image.min.js"></script>
 		<script src="third-party/MIT/js-big-decimal.min.js"></script>
-		<style>
-			iframe {
-				position: sticky;
-				left: 0;
-			}
-		</style>
 	</head>
 	<body>
 		<script>
@@ -611,15 +605,25 @@
 					pfp.lb = lb;
 				}
 				document.body.appendChild(ws);
+				var container = document.createElement('div');
+				Object.assign(container.style, {
+					width: wsWidth
+				});
 				var ad = document.createElement('div');
 				Object.assign(ad.style, {
-					width: wsWidth
+					position: 'sticky',
+					left: 0,
+					width: '100vw',
+					display: 'flex',
+					'justify-content': 'center',
+					'align-items': 'center'
 				});
 				var script = document.createElement('script');
 				script.defer = true;
 				script.src = 'https://www.highperformanceformat.com/fb9374709f8705909e960339f3e9f394/invoke.js';
 				ad.appendChild(script);
-				document.body.appendChild(ad);
+				container.appendChild(ad);
+				document.body.appendChild(container);
 				var io = document.createElement('div');
 				Object.assign(io.style, {
 					width: 0.5 * (imageWidth - gap) + 'px',

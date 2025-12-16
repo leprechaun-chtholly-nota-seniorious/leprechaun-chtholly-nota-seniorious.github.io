@@ -611,6 +611,14 @@
 					pfp.lb = lb;
 				}
 				document.body.appendChild(ws);
+				var ad = document.createElement('div');
+				Object.assign(ad.style, {
+					width: wsWidth
+				});
+				var script = document.createElement('script');
+				script.src = 'https://www.highperformanceformat.com/fb9374709f8705909e960339f3e9f394/invoke.js';
+				ad.appendChild(script);
+				document.body.appendChild(ad);
 				var io = document.createElement('div');
 				Object.assign(io.style, {
 					width: 0.5 * (imageWidth - gap) + 'px',
@@ -900,14 +908,6 @@
 						updateLB(pfp, null === limitBreak ? -1 : parseInt(limitBreak), true);
 					}
 				}
-				var ad = document.createElement('div');
-				Object.assign(ad.style, {
-					width: wsWidth
-				});
-				var script = document.createElement('script');
-				script.src = 'https://www.highperformanceformat.com/fb9374709f8705909e960339f3e9f394/invoke.js';
-				ad.appendChild(script);
-				document.body.appendChild(ad);
 			})();
 		</script>
 	</body>

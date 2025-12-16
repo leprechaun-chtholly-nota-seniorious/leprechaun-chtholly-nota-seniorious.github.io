@@ -22,6 +22,13 @@
 	</head>
 	<body>
 		<script>
+			var atOptions = {
+				'key' : 'fb9374709f8705909e960339f3e9f394',
+				'format' : 'iframe',
+				'height' : 60,
+				'width' : 468,
+				'params' : {}
+			};
 			(function() {
 				Object.assign(document.body.style, {
 					backgroundColor: 'black',
@@ -487,8 +494,9 @@
 					e.target.pointerdown = false;
 				};
 				var ws = document.createElement('div');
+				var wsWidth = (columnCount + 0.5) * imageWidth - gap + 'px';
 				Object.assign(ws.style, {
-					width: (columnCount + 0.5) * imageWidth - gap + 'px',
+					width: wsWidth,
 					height: (1 + 0.75 * Math.floor(styles.length / columnCount)) * imageHeight - gap + 'px'
 				});
 				var styleSum = [];
@@ -892,17 +900,15 @@
 						updateLB(pfp, null === limitBreak ? -1 : parseInt(limitBreak), true);
 					}
 				}
+				var ad = document.createElement('div');
+				Object.assign(ad.style, {
+					width: wsWidth
+				});
+				var script = document.createElement('script');
+				script.src = 'https://www.highperformanceformat.com/fb9374709f8705909e960339f3e9f394/invoke.js';
+				ad.appendChild(script);
+				document.body.appendChild(ad);
 			})();
 		</script>
-		<script type="text/javascript">
-			atOptions = {
-				'key' : 'fb9374709f8705909e960339f3e9f394',
-				'format' : 'iframe',
-				'height' : 60,
-				'width' : 468,
-				'params' : {}
-			};
-		</script>
-		<script type="text/javascript" src="https://www.highperformanceformat.com/fb9374709f8705909e960339f3e9f394/invoke.js"></script>
 	</body>
 </html>

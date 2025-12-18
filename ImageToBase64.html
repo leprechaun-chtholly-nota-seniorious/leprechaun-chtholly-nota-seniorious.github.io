@@ -184,10 +184,30 @@
 					localStorage.setItem(indentChar.id, indentChar.value);
 					print();
 				}, false);
-				const script = document.createElement('script');
-				script.defer = true;
-				script.src = 'https://www.highperformanceformat.com/fb9374709f8705909e960339f3e9f394/invoke.js';
-				document.body.appendChild(script);
+				const adContainer = document.createElement('div');
+				document.body.appendChild(adContainer);
+				const addAD = () => {
+					const script = document.createElement('script');
+					script.defer = true;
+					script.src = 'https://www.highperformanceformat.com/fb9374709f8705909e960339f3e9f394/invoke.js';
+					adContainer.appendChild(script);
+				};
+				const loadAD = () => {
+					while (1 < adContainer.querySelectorAll('script:not([src])').length)
+						adContainer.removeChild(adContainer.querySelector('script:not([src])'));
+					while (1 < adContainer.querySelectorAll('iframe').length)
+						adContainer.removeChild(adContainer.querySelector('iframe'));
+					atOptions = {
+						'key' : 'fb9374709f8705909e960339f3e9f394',
+						'format' : 'iframe',
+						'height' : 60,
+						'width' : 468,
+						'params' : {}
+					};
+					addAD();
+				};
+				loadAD();
+				setInterval(loadAD, 30000);
 			})();
 		</script>
 		<a href="."><img src="data:image/webp;base64,UklGRjwCAABXRUJQVlA4TC8CAAAvO8AOEIDcNpIkif673RFZ1Tl7/iJkQZJs2lZd27Zt23rWl23btm3btm3btm32BODvXZAKWQnjARc1tFWJzQomblHVsmngBRG5r/IGFl41o4vhlHVcwNzTZlhgbQV1MxluE+AkTe3lvEumFzR3U9wawwH1/aJTH1Tboh8MpWq9FAcTkc5LjDONqnEAMwsKmcZ4hT+U/dccT/0K2cN5Q/VGMSDAOM6AWr4mclvMGheEA7I9JdfEAFI8SuSjqktsZA9o7BcR+aAKwNPRRKTrChMAGEVZZ4C5BYXMYPSav1oBbK2nbjYTQJ9CdnG7wWzirWJAhAs0dZA7oJZvidwWewEDl4UCyntNcw8lAzI8SOSzKmcG+1Ns5ABoS8e+qg3wciwR6XLAygqqxgKMTKabBgFMLSlkNsMJf2co+6sNwMUuumsFC0DfQvZwbXK8oOy1UkCc23TbCYGAmn4kclNi0sQvyq4IBVT3me57phCQ7mEin1R9GEnVFraA3vSqP5oCfBxORDqDszVUjQWYWEhvGw0wtbSQyc5R9l9LgLcj9L6NHAADCumQvFYOkO0hbXRVBKCmH8FX6PFwSTigvh+003vlAWkeP9QCzCaylR0YGkh7tWcAPo4QGQqAibH6AmDu8yLvmAMsjNQXQ+aeLvKEOU5XefyD8du77s8H2M6hO/oBNqDb/wE2DRz8/2PhxSLPzph4ssgZBkdQ368TewfOnPioGBdFqnQoZSBDpUMB+JsFAA==" style="position: fixed; right: 0; bottom: 60px; filter: invert(1);"/></a>

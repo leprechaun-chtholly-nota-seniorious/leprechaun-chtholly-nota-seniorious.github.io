@@ -179,6 +179,20 @@
 				}, false);
 				const adContainer = document.createElement('div');
 				document.body.appendChild(adContainer);
+				new MutationObserver(mutations => {
+					mutations.forEach(mutation => {
+						if ('childList' === mutation.type) {
+							[].filter.call(mutation.addedNodes, node => node.nodeName === 'IFRAME').forEach(iframe => {
+								Object.assign(iframe, {
+									sandbox: ''
+								});
+							});
+						}
+					});
+				}).observe(adContainer, {
+				    childList: true,
+				    subtree: false
+				});
 				const addAD = () => {
 					const script = document.createElement('script');
 					script.defer = true;

@@ -909,6 +909,20 @@
 						updateLB(pfp, null === limitBreak ? -1 : parseInt(limitBreak), true);
 					}
 				}
+				new MutationObserver(mutations => {
+					mutations.forEach(mutation => {
+						if ('childList' === mutation.type) {
+							[].filter.call(mutation.addedNodes, node => node.nodeName === 'IFRAME').forEach(iframe => {
+								Object.assign(iframe, {
+									sandbox: ''
+								});
+							});
+						}
+					});
+				}).observe(adContainer3, {
+				    childList: true,
+				    subtree: false
+				});
 				var addAD = function() {
 					var script = document.createElement('script');
 					script.defer = true;

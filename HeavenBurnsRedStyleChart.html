@@ -13,15 +13,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
 		<script src="third-party/MIT/dom-to-image.min.js"></script>
 		<script src="third-party/MIT/js-big-decimal.min.js"></script>
-		<style>
-			iframe {
-				display: block;
-			}
-			iframe:nth-child(2 of iframe) {
-				position: relative;
-				top: -60px;
-			}
-		</style>
 	</head>
 	<body>
 		<script>
@@ -611,29 +602,6 @@
 					pfp.lb = lb;
 				}
 				document.body.appendChild(ws);
-				var adContainer1 = document.createElement('div');
-				Object.assign(adContainer1.style, {
-					width: wsWidth,
-					height: '60px'
-				});
-				var adContainer2 = document.createElement('div');
-				Object.assign(adContainer2.style, {
-					position: 'sticky',
-					left: 0,
-					width: '100vw',
-					display: 'flex',
-					'justify-content': 'center',
-					'align-items': 'center'
-				});
-				var adContainer3 = document.createElement('div');
-				Object.assign(adContainer3.style, {
-					width: '468px',
-					height: '60px',
-					overflow: 'clip'
-				});
-				adContainer2.appendChild(adContainer3);
-				adContainer1.appendChild(adContainer2);
-				document.body.appendChild(adContainer1);
 				var io = document.createElement('div');
 				Object.assign(io.style, {
 					width: 0.5 * (imageWidth - gap) + 'px',
@@ -913,43 +881,25 @@
 						updateLB(pfp, null === limitBreak ? -1 : parseInt(limitBreak), true);
 					}
 				}
-				new MutationObserver(mutations => {
-					mutations.forEach(mutation => {
-						if ('childList' === mutation.type) {
-							[].filter.call(mutation.addedNodes, node => 'IFRAME' === node.nodeName).forEach(iframe => {
-								Object.assign(iframe, {
-									sandbox: ''
-								});
-							});
-						}
-					});
-				}).observe(adContainer3, {
-				    childList: true,
-				    subtree: false
-				});
-				var addAD = function() {
-					// var script = document.createElement('script');
-					// script.defer = true;
-					// script.src = 'https://www.highperformanceformat.com/fb9374709f8705909e960339f3e9f394/invoke.js';
-					// adContainer3.appendChild(script);
-				};
-				var loadAD = function() {
-					while (1 < adContainer3.querySelectorAll('script:not([src])').length)
-						adContainer3.removeChild(adContainer3.querySelector('script:not([src])'));
-					while (1 < adContainer3.querySelectorAll('iframe').length)
-						adContainer3.removeChild(adContainer3.querySelector('iframe'));
-					atOptions = {
-						'key' : 'fb9374709f8705909e960339f3e9f394',
-						'format' : 'iframe',
-						'height' : 60,
-						'width' : 468,
-						'params' : {}
-					};
-					addAD();
-				};
-				loadAD();
-				setInterval(loadAD, 30000);
 			})();
 		</script>
+		<div style="position: absolute; z-index: 99999">
+			<input autocomplete="off" type="checkbox" id="aadsstickymk7ivjnf" hidden />
+			<div style="padding-top: 0; padding-bottom: 60px;">
+				<div style="width:468px;height:60px;position:fixed;text-align:center;font-size:0;bottom:0;left:0;right:0;margin:auto">
+					<label for="aadsstickymk7ivjnf" style="top: -24px; right: 0;; position: absolute;border-radius: 4px; background: rgba(248, 248, 249, 0.70); padding: 4px;z-index: 99999;cursor:pointer">
+						<svg fill="#000000" height="16px" width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 490">
+							<polygon points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490 489.292,457.678 277.331,245.004 489.292,32.337 "/>
+						</svg>
+					</label>
+					<div id="frame" style="width: 468px;margin: auto;z-index: 99998;height: auto"><iframe data-aa=2423706 src=//ad.a-ads.com/2423706/?size=468x60 style='border:0; padding:0; width:468px; height:60px; overflow:hidden; margin: auto'></iframe></div>
+				</div>
+				<style>
+					#aadsstickymk7ivjnf:checked + div {
+						display: none;
+					}
+				</style>
+			</div>
+		</div>
 	</body>
 </html>

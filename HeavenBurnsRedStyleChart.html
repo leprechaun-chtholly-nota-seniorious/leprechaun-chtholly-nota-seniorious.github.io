@@ -640,7 +640,8 @@
 					top: 0,
 					'overflow-x': 'hidden',
 					'overflow-y': 'auto',
-					'scrollbar-color': '#686868 #060606'
+					'scrollbar-color': '#686868 #060606',
+					'z-index': 100000
 				});
 				var bgShare = [
 					'#7F7F7F',
@@ -893,7 +894,9 @@
 							<polygon points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490 489.292,457.678 277.331,245.004 489.292,32.337 "/>
 						</svg>
 					</label>
-					<div id="frame" style="width: 468px;margin: auto;z-index: 99998;height: auto"><iframe data-aa=2423706 src=//ad.a-ads.com/2423706/?size=468x60 style='border:0; padding:0; width:468px; height:60px; overflow:hidden; margin: auto'></iframe></div>
+					<div id="frame" style="width: 468px;margin: auto;z-index: 99998;height: 60px;overflow:hidden">
+						<iframe data-aa=2423706 src=//ad.a-ads.com/2423706/?size=468x60 style='border:0; padding:0; width:468px; height:60px; overflow:hidden; margin: auto; position: relative !important;' sandbox='allow-scripts allow-forms allow-same-origin'></iframe>
+					</div>
 				</div>
 				<style>
 					#aadsstickymk7ivjnf:checked + div {
